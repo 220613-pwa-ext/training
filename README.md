@@ -12,9 +12,9 @@ This is the training repository for the Python-Java with Automation batch starti
 # Training Recaps
 * Documents containing recaps of what was covered for a particular week will be listed here
 
-| Week | Topics Covered | Link |
-| ---- | -------------- | ---- |
-| 1 | Python | |
+| Week | Topics Covered | Miro Link | Recap Link |
+| ---- | -------------- | --------- | ---------- |
+| 1 | Python | [day-1](https://miro.com/app/board/uXjVOtHw8pA=/?share_link_id=338516573304) | - |
 
 ---
 
