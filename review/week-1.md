@@ -1,0 +1,193 @@
+# Week 1 Review
+
+* Python
+    - Interpreted
+        - Python programs run using an interpreter
+        - An interpreter is a piece of software that will read the code line by line AS THE PROGRAM IS RUNNING and translate it into something that the computer will understand
+        - Compiler v. Interpreter
+            - Compilers translate source code into lower-level code that will later be executed
+            - Interpreters translate source code into lower-level code that gets executed while the program is running
+    - High-level
+        - Easy for humans to understand and read/write
+        - Programming languages that are high level allow for greater productivity, more people to become developers, etc.
+    - Dynamic
+        - Variables are able to store many different types of data
+        - You can change what type of data a variable is storing
+    - Strongly-typed
+        - All conversions from one datatype to another must be explicit
+        - `print('number: ' + str(5))`
+* Python Interpreter
+    - Many different versions
+        - CPython
+            - Written in C
+            - Official "reference" interpreter
+            - Found whenever you installed Python from python.org
+        - JPython
+            - Written in Java
+        - IronPython
+            - Written in C#
+    - Structure
+        - Just-in-time compiler (JIT)
+            - Translates Python code into "byte-code"
+        - Virtual Machine
+            - Executes the byte-code
+            - Translates byte-code into machine code that the computer can execute
+* History of Python
+    - Created by Guido Van Rossum
+        - Designed the idea of the Python programming language in the 1980s
+        - The first implementation was created in 1991
+    - Versions
+        - Python 2
+            - Legacy version of Python
+            - A lot of companies still use Python 2 programs
+            - Different syntax than Python 3
+        - Python 3
+            - Current version of Python
+            - Not backwards compatible with Python 2
+            - All existing Python 2 code would need to be updated by developers to be able to run within the Python 3 ecosystem
+* Git
+    - Version control system
+    - Used for managing versions of a project
+        - These versions are known as commits
+    - Project structure
+        - Working directory
+            - Containing all of the files you are actually working with in your project
+        - .git folder
+            - Staging area
+                - Files from the working directory are added to the staging area using `git add`
+            - Local repository
+                - Files from the staging area are committed to the local repository using `git commit`
+        - Remote repository
+            - Exists in another location
+                - Ex. Github, Gitlab, BitBucket, SourceForge
+            - Changes from the local repository can be pushed to the remote repository using `git push`
+    - Git commands
+        - `git init`
+            - Initialize a new local repository
+        - `git remote`
+            - Used to configure remote repositories that the local repository should be linked to
+            - ex. `git remote add origin <link>`
+        - `git log`
+            - Display the history of commits
+        - `git reset`
+            - Rollback to previous commits
+        - `git clone`
+            - Clones the remote repository to your computer and creates a local repository
+        - `git pull`
+            - "Pulls the latest changes from the remote repository to the local repository"
+            - Combination of two commands
+                - `git fetch`
+                - `git merge`
+        - `git fetch`
+            - Download the changes made from the remote repository
+            - Does not affect the working directory
+        - `git merge`
+            - Merging changes from one branch into another branch
+        - `git checkout`
+            - Switching the branch that you are on
+        - `git branch`
+            - Create a new branch
+        - Typical Git workflow
+            - `git status`
+            - `git add`
+            - `git commit`
+            - `git push`
+* IDEs
+    - Integrated development environment
+        - Provides useful productivity features for development
+            - Linting
+            - Execution
+            - Debugging
+            - Running tests
+            - etc.
+        - Language-specific
+    - Example
+        - PyCharm
+* Text editors
+    - You can write code using text editors
+    - Source code is just "plain-text"
+    - Examples
+        - Visual Studio Code
+        - Notepad
+        - Notepad++
+        - Sublime Text
+* Python Keywords
+    - Reserved words that cannot be used as identifiers
+* Python identifiers
+    - Names for variables, classes, or functions
+    - Rules
+        - valid: a-z, A-Z, 0-9, _
+        - invalid: !@#$%^&*()
+        - Cannot start with a number
+* Python datatypes
+    - `str`
+    - Numeric types
+        - `int`
+        - `float`
+    - Boolean type
+        - `bool`
+    - Sequence types
+        - `list`
+        - `tuple`
+        - `range`
+    - Dictionary type
+        - `dict`
+    - None type
+        - NoneType
+            - `None`
+* Arithmetic Operators
+    - `+`
+        - Addition
+    - `-`
+        - Subtraction
+    - `*`
+        - Multiplication
+    - `/`
+        - Division
+    - `//`
+        - Integer Division
+        - Truncates the decimal places
+    - `%`
+        - Modulus
+        - Remainder
+        - ex. `11 % 3 -> 2`, 11 / 3 equals 3 remainder 2
+    - `**`
+        - Exponentiation
+* Assignment Operators
+    - `=`
+    - `+=`
+    - `-=`
+    - `*=`
+    - `/=`
+    - `//=`
+    - `%=`
+    - `**=`
+* Statement v. Expression
+    - Statement: a line of code that does something
+    - Expression: a piece of code that evaluates to a single value
+        - ex. `2 + 2`
+        - ex. `addition(2, 2)`
+        - ex. `10`
+        - ex. `addition(2, 3) + 5`
+        - ex. `addition(addition(2, 3), addition(3, 5))`
+    - All expressions can be statements, but not all statements can be expressions
+* Functions
+    - A block of code that can be executed over and over
+        - Reusable
+    - The code does not run unless you invoke the function
+    - `def <function name>(): `
+    - Functions can be defined with parameters
+        - Parameters represent values that can be passed into the function when the function is invoked
+        - "Input"
+    - Functions can also return values
+        - `return` keyword
+        - "Output"
+        - If your function has no return keyword, it will return `None`
+            - `print(print("Hello world"))` -> `print(None)`
+    - Parameters v. Arguments
+        - Parameters are the variables that are defined for the function that maps to the inputs into the function
+        - ex. `def some_func(x, y):`
+            - x and y are parameters
+        - Arguments: what you actually pass, or input into the function whenever you invoke the function
+            - ex. `some_func(10, 20)`
+                - 10 and 20 are arguments that map to the parameters x and y
