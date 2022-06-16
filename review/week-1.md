@@ -312,3 +312,63 @@
     - `git push`
 
 # Questions
+## Git
+* What is Git?
+* What is Git Bash?
+* What is the `working directory`?
+* When you're inside of a directory on your computer, how can you tell that this directory is a git repository?
+* What is the .git folder?
+* What is the staging area and how do you add files to the staging area?
+* What is the difference between a local repository and remote repository?
+* How are git and Github different from each other?
+* What command can you use to create a local copy on your computer of a repository that you found on Github?
+* What command can you use to create a brand new local repository on your computer?
+* What command can you use to view the history of commits?
+* What 4 commands are part of the typical Git workflow?
+
+## Programming
+* What is a programming language?
+* What is the difference between a high-level language and a low-level language?
+* What is bytecode?
+* What is machine code?
+* What is a compiler?
+* What is an interpreter?
+* What is the difference between a compiled and interpreted language?
+* What is an IDE? Is an IDE required to write a program?
+* How are IDEs different than text editors?
+* What is the difference between a statement and expression?
+
+## Python
+* What is Python?
+* What does it mean for Python to be a dynamically typed programming language?
+* What does it mean for Python to be a strongly typed language?
+* What programming language is the official "reference" interpreter for Python written in?
+* Describe the structure of the Python interpreter
+* What versions of Python are there? Why is it important to know that these two versions exist?
+* What are keywords?
+* What are Python identifiers and the rules for how identifiers can be named?
+* What datatypes does Python have?
+* What is the difference between the normal division operator `/` and `//`?
+* What are functions?
+* How do you define a function in Python?
+* Will the code inside a function run by only defining the function?
+* How do you invoke functions?
+* What are parameters?
+* How are arguments different than parameters?
+* What is the purpose of the `return` keyword inside a function?
+* What does the function return if there is no return keyword?
+* How can you convert a str into an int?
+* How can you convert a float into a str?
+* What would `print(int(10.7))` output to the console?
+* What Falsy values are there?
+* What is slicing and what can you perform slicing on besides strings?
+* What is the syntax for slicing?
+* What are some examples of methods that exist for strings?
+* Explain what comparison operators do
+* Explain what the logical operators do
+* What portion of memory are objects stored in?
+* Where are variables located in memory?
+* What value do variables really store "under the hood"? For example, does x in `x = 10` really store the int 10 or something else?
+* Explain how if, elif, and else work
+* What are while loops and their syntax?
+* What are for loops and their syntax?
