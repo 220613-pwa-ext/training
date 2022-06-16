@@ -158,6 +158,110 @@
             - ex. `some_func(10, 20)`
                 - 10 and 20 are arguments that map to the parameters x and y
 
+* Type conversion
+    - Python is strongly-typed
+        - Therefore, conversion must be done explicitly in Python
+    - Functions to convert values
+        - `int()`
+        - `float()`
+        - `str()`
+        - `bool()`
+
+* Truthy v. Falsy values
+    - Falsy values
+        - 0 or 0.0
+        - Empty strings `""`
+        - None
+        - Empty lists `[]`
+        - Empty tuples `()`
+        - Empty dictionaries `{}`
+        - Empty sets `set()`
+        - Empty ranges `range(0)`
+    - Truthy values
+        - Non-zero numbers (both negative AND positive)
+        - Strings that have characters
+        - Lists, tuples, dictionaries, sets, and ranges that have values
+
+* Slicing
+    - Can be performed on
+        - Strings
+        - Tuples
+        - Lists
+    - Used to retrieve a segment of a string, tuple, or list
+        - Creates a brand new object
+    - Syntax
+        - `my_list[<start>:<end>:<step>]`
+        - Examples
+            - `my_list[2:5]`
+            - `my_list[::]`
+            - `my_list[::-1]`
+            - `my_list[3:]`
+            - `my_list[5:10:3]`
+            - `my_list[3::2]`
+
+* String methods
+    - `len(my_string)` to get the length of the string (# of characters)
+    - `my_string.upper()`
+    - `my_string.lower()`
+    - `my_string.replace()`
+    - `my_string.count()`
+    - `my_string.find()`
+
+* Comparison Operators
+    - Are used to form an expression that results in a single boolean value
+    - `==` Equal
+    - `!=` Not Equal
+    - `>` Greater than
+    - `>=` Greater than or Equal
+    - `<` Less than
+    - `<=` Less than or Equal
+    - `is` Identity
+
+* Logical Operators
+    - Are used to operate on boolean values to produce a single boolean value
+    - And
+        - True and True -> True
+        - True and False -> False
+        - False and True -> False
+        - False and False -> False
+    - Or
+        - True or True -> True
+        - True or False -> True
+        - False or True -> True
+        - False or False -> False
+    - Not
+        - not True -> False
+        - not False -> True
+
+* Memory Management
+    - Two places in random-access memory (RAM)
+        - Stack
+            - Where variables that are not part of an object go
+            - These variables contain the memory address location of the object it the variable is referring to
+        - Heap
+            - Contains objects
+    - Every piece of data in Python is an object
+    - Automatic memory management
+        - Garbage collection
+            - Objects that no longer have a reference are automatically destroyed by the garbage collector
+
+* Control Flow
+    - Conditional statements / branching statements
+        - if
+        - elif
+        - else
+    - Loops
+        - While loops
+            - Will continue looping until specified condition is False
+        - For loops
+            - Used to iterate over iterable objects
+                - Ranges
+                - Lists
+                - Tuples
+                - Strings
+                - Sets
+                - Dictionaries
+
 ## Git
 * Git
     - Version control system
