@@ -311,6 +311,165 @@
     - `git commit`
     - `git push`
 
+* Python collections
+    - List
+        - Ordered collection of elements
+        - Elements can be added over time (no limit)
+        - Mutable
+        - Elements can be accessed by index (starting at 0)
+            - ex. `my_list[0]`, `my_list[5]`
+        - Methods
+            - .append()
+            - .clear()
+            - .copy()
+            - .count()
+            - .extend()
+            - .index()
+            - .insert()
+            - .pop()
+            - .remove()
+            - .reverse()
+            - .sort()
+    - Tuple
+        - Ordered collection of elements
+        - Immutable
+        - Elements can be accessed by index (starting at 0)
+            - Works similarly like a list
+        - Values cannot be changed or added to a tuple once it has been created
+        - Methods
+            - .index()
+            - .count()
+    - Set
+        - UNORDERED collection of elements
+            - There are no indices
+        - Sets can only have unique values
+            - No duplicates
+        - can use the `in` operator to check if a value exists in a set
+            - ex. `"apple" in my_set` -> True/False
+        - Methods
+            - .add()
+            - .clear()
+            - .copy()
+            - .difference()
+            - .difference_update()
+            - .intersection()
+            - .intersection_update()
+            - etc...
+    - Dictionary
+        - A set of key-value pairs
+            - Key 
+                - Unique
+                - serves as an identifier for a value
+                - must be immutable objects
+                    - Strings
+                    - Numbers
+                    - Tuples
+            - Values can be any object
+                - Do not need to be unique
+        - You can retrieve the value corresponding to a particular key
+            - ex. `phone_book['john']`
+
+* `in` Operator (membership operator)
+    - Used to check whether a value exists within a given collection
+        - Lists
+        - Dictionaries
+        - Sets
+        - Tuples
+    - examples
+        - `"my_key" in my_dict`
+        - `2 in my_list`
+        - `"apple" in my_set`
+
+* *args and **kwargs
+    - *args
+        - Variable arguments
+        - Allows us to pass in an indefinite number of arguments when invoking the function
+        - The args parameter is treated as a tuple
+    - **kwargs
+        - Keyword arguments
+        - Allows us to specify arguments based on keyword
+            - ex. `do_math(10, 20, operation="multiply")
+        - The kwargs parameter is treated as a dictionary
+            - The keyword is a key, the argument itself is the value
+    - Functions can have a combination of all 3
+        - Positional arguments (regular arguments)
+        - Variable arguments (*args)
+        - Keyword arguments (**kwargs)
+
+* Python modules
+    - The module system allows us to have multiple files in our Python application
+    - We can "link" files together by importing them
+    - Import usages
+        - usage 1
+            - `import my_math_utility`
+            - `print(my_math_utility.addition(10, 20))`
+        - usage 2
+            - alias
+            - `import my_math_utility as m`
+            - `print(m.addition(10, 20))`
+        - usage 3
+            - `from my_math_utility import addition`
+            - `print(addition(10, 20))`
+
+* PyPi
+    - Public repository for Python packages
+    - Many packages are available for developers to make use of
+    - ex. `pytest`, `numpy`, `matplotlib`, `flask`, `pandas`, `psycopg2`
+    - Packages can be installed to computer using pip
+
+* Pip
+    - "Package Installer for Python"
+    - Software tool used to install Python packages from PyPi
+    - `pip install <package name>`
+
+* Virtual Environment
+    - Allows us to have independent versions of dependencies (packages) for each Python project
+        - Solves the problem where different projects require different versions of a package
+    - Can be created through
+        - PyCharm
+        - Command line
+            - `python -m venv venv`
+    - The virtual environment can be activated on the command line
+        - `source venv/Scripts/activate`
+        - Packages can then be installed to the virtual environment
+            - `pip install <package name>`
+    - `deactivate` to exit the virtual environment in the command line
+
+## SDLC
+* Software Development Lifecycle
+    - Phases
+        - Requirements phase
+        - Design phase
+        - Implementation phase
+        - Testing phase
+        - Deployment phase
+
+## Testing
+* Software Testing
+    - Objectives
+        - Assess the quality of software
+        - Reduce the risk of software failure in operation
+    - Not the same as test execution
+        - Many activites are part of software testing
+    - Types of Tests
+        - Unit tests
+            - Testing individual units of code
+                - A single method/function or block of code
+            - Performed in an automated fashion using unit testing frameworks such as `pytest`
+        - Integration tests
+        - End to end tests
+    
+* PyTest
+    - A testing framework for Python
+    - Test cases can be implemented in code
+        - Test cases should be written in files with the filename containing `test_` at the beginning
+            - ex. `test_my_math_utility.py`
+        - Test cases are methods starting with `test_`
+            - ex. `def test_addition_1():`
+    - Tests can be executed
+        - In PyCharm IDE
+        - Running `pytest -v` in the command line
+
 # Questions
 ## Git
 * What is Git?
