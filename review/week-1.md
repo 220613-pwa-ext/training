@@ -531,3 +531,42 @@
 * Explain how if, elif, and else work
 * What are while loops and their syntax?
 * What are for loops and their syntax?
+* What collections does Python have?
+* What is the difference between a list and tuple?
+* How do you access elements from a list or tuple?
+* What are some methods that you can use for a list?
+* How would I go about printing out all of the elements one by one from a list?
+* What is mutability v. immutability?
+* Are lists immutable or mutable? What about tuples?
+* What are sets?
+* Can you access elements from a set using an index?
+* What are some methods can we use for sets?
+* What are dictionaries?
+* Do keys need to be unique or can we have duplicates?
+* Do values need to be unique or can we have duplicates?
+* How do you access the value of a particular key-value pair?
+* What is the purpose of the `in` operator?
+* What are *args and **kwargs each used for?
+* What is the Python module system and how can we use it?
+* What is PyPi?
+* What is pip? How do we install packages using pip?
+* What is the purpose of using a virtual environment for a Python project?
+* How do we go about installing packages inside our virtual environment?
+
+## SDLC
+* What phases are there in the SDLC?
+* What happens in the requirements phase?
+* What happens in the design phase?
+* What happens in the implementation phase?
+* What happens in the testing phase?
+* What happens in the deployment phase?
+
+## Testing
+* What is the purpose of software testing?
+* What types of tests (functional) are there?
+* What is PyTest?
+* How do we install PyTest?
+* How do we write test cases with PyTest?
+* What is the naming convention for the .py files that contain the unit test test cases?
+* What is the naming convention of the test case functions?
+* How do you execute the unit tests in the command line?
