@@ -55,6 +55,6 @@ Remember that the above requirements are the minimum viable product (MVP). You c
 
 Here are some ideas:
 - Run the application on a docker image
-- Deploy the application to a Google Cloud Compute instance
+- Deploy the application to an AWS EC2 instance
 - Use at least 1 stored procedure w/ Postgres
 - Additional resources and RESTful endpoints (in addition to the clients and accounts resources in the main requirements)
