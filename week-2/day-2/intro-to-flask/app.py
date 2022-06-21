@@ -139,4 +139,28 @@ def get_all_todos_by_user(username):
     }, 200
 
 
+@app.route('/users/<username>/todos', methods=['POST'])
+def create_todo(username):
+    if username not in users:
+        return {
+            "message": f"User with username {username} that you are trying to add a todo for does not exist"
+        }, 404
+
+    json = request.get_json()
+
+    if str(json['description']).strip() == '':
+        return {
+            "message": "Description for todo cannot be blank"
+        }, 400
+
+    new_todo = {
+        "description": json['description'],
+        "completed": False
+    }
+
+    users[username]['todos'].append(new_todo)
+
+    return new_todo, 200
+
+
 app.run(port=8080)  # Start up the web server on port 8080
