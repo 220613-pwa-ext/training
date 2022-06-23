@@ -1,31 +1,44 @@
 from flask import Blueprint, request
-from dao.user_dao import UserDao
+from model.user import User
+from service.user_service import UserService
+from exception.invalid_parameter import InvalidParameterError
 
 uc = Blueprint('user_controller', __name__)
-user_dao = UserDao()
+user_service = UserService()
 
 
 @uc.route('/users')
 def get_all_users():
     return {
-        "users": user_dao.get_all_users()  # This method returns a list of dictionaries containing each
-        # users' information
+        "users": user_service.get_all_users()  # a list of dictionaries
     }
 
 
 @uc.route('/users/<username>')
 def get_user_by_username(username):
-    return user_dao.get_user_by_username(username)  # This method returns a dictionary containing a single
-    # user's information
+    try:
+        return user_service.get_user_by_username(username)  # dictionary
+    except KeyError as e:
+        return {
+            "message": f"User with username {username} was not found!"
+        }, 404
 
 
 @uc.route('/users', methods=['POST'])
 def add_user():
     user_json_dictionary = request.get_json()
-    return user_dao.add_user(user_json_dictionary)
+    user_object = User(user_json_dictionary['username'], user_json_dictionary['mobile_phone'])
+    try:
+        return user_service.add_user(user_object), 201  # Dictionary representation of the newly added user
+        # 201 created
+    except InvalidParameterError as e:
+        return {
+            "message": str(e)
+        }, 400
 
 
 @uc.route('/users/<username>', methods=['PUT'])
 def edit_user_by_username(username):
     user_json_dictionary = request.get_json()
-    return user_dao.edit_user_by_username(username, user_json_dictionary)
+    user_object = User(user_json_dictionary['username'], user_json_dictionary['mobile_phone'])
+    return user_service.edit_user_by_username(username, user_object)
