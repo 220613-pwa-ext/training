@@ -262,55 +262,6 @@
                 - Sets
                 - Dictionaries
 
-## Git
-* Git
-    - Version control system
-    - Used for managing versions of a project
-        - These versions are known as commits
-    - Project structure
-        - Working directory
-            - Containing all of the files you are actually working with in your project
-        - .git folder
-            - Staging area
-                - Files from the working directory are added to the staging area using `git add`
-            - Local repository
-                - Files from the staging area are committed to the local repository using `git commit`
-        - Remote repository
-            - Exists in another location
-                - Ex. Github, Gitlab, BitBucket, SourceForge
-            - Changes from the local repository can be pushed to the remote repository using `git push`
-* Git commands
-    - `git init`
-        - Initialize a new local repository
-    - `git remote`
-        - Used to configure remote repositories that the local repository should be linked to
-        - ex. `git remote add origin <link>`
-    - `git log`
-        - Display the history of commits
-    - `git reset`
-        - Rollback to previous commits
-    - `git clone`
-        - Clones the remote repository to your computer and creates a local repository
-    - `git pull`
-        - "Pulls the latest changes from the remote repository to the local repository"
-        - Combination of two commands
-            - `git fetch`
-            - `git merge`
-    - `git fetch`
-        - Download the changes made from the remote repository
-        - Does not affect the working directory
-    - `git merge`
-        - Merging changes from one branch into another branch
-    - `git checkout`
-        - Switching the branch that you are on
-    - `git branch`
-        - Create a new branch
-* Typical Git workflow
-    - `git status`
-    - `git add`
-    - `git commit`
-    - `git push`
-
 * Python collections
     - List
         - Ordered collection of elements
@@ -434,6 +385,55 @@
         - Packages can then be installed to the virtual environment
             - `pip install <package name>`
     - `deactivate` to exit the virtual environment in the command line
+
+## Git
+* Git
+    - Version control system
+    - Used for managing versions of a project
+        - These versions are known as commits
+    - Project structure
+        - Working directory
+            - Containing all of the files you are actually working with in your project
+        - .git folder
+            - Staging area
+                - Files from the working directory are added to the staging area using `git add`
+            - Local repository
+                - Files from the staging area are committed to the local repository using `git commit`
+        - Remote repository
+            - Exists in another location
+                - Ex. Github, Gitlab, BitBucket, SourceForge
+            - Changes from the local repository can be pushed to the remote repository using `git push`
+* Git commands
+    - `git init`
+        - Initialize a new local repository
+    - `git remote`
+        - Used to configure remote repositories that the local repository should be linked to
+        - ex. `git remote add origin <link>`
+    - `git log`
+        - Display the history of commits
+    - `git reset`
+        - Rollback to previous commits
+    - `git clone`
+        - Clones the remote repository to your computer and creates a local repository
+    - `git pull`
+        - "Pulls the latest changes from the remote repository to the local repository"
+        - Combination of two commands
+            - `git fetch`
+            - `git merge`
+    - `git fetch`
+        - Download the changes made from the remote repository
+        - Does not affect the working directory
+    - `git merge`
+        - Merging changes from one branch into another branch
+    - `git checkout`
+        - Switching the branch that you are on
+    - `git branch`
+        - Create a new branch
+* Typical Git workflow
+    - `git status`
+    - `git add`
+    - `git commit`
+    - `git push`
 
 ## SDLC
 * Software Development Lifecycle
