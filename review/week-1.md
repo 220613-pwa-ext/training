@@ -451,7 +451,7 @@
         - Reduce the risk of software failure in operation
     - Not the same as test execution
         - Many activites are part of software testing
-    - Types of Tests
+    - Levels of Tests
         - Unit tests
             - Testing individual units of code
                 - A single method/function or block of code
