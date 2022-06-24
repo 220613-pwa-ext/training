@@ -1,0 +1,42 @@
+
+id: 1
+balance: 5500
+
+id: 2
+balance: 2000
+
+id: 3
+balance: 4000
+
+id: 4
+balance: 500
+
+
+==========================
+GET /customer/1/accounts
+id: 1
+balance: 5500
+
+id: 2
+balance: 2000
+
+id: 3
+balance: 4000
+
+id: 4
+balance: 500
+
+==========================
+GET /customer/1/accounts?amountGreaterThan=abc&amountLessThan=def
+
+Test Scenarios:
+1. User uses only amountGreaterThan (positive)
+2. User uses only amountLessThan (positive)
+3. User has amountGreaterThan value that is greater than amountLessThan value (negative)
+4. User uses non-numeric values for amountGreaterThan and amountLessThan (negative)
+5. User uses negative numbers for amountGreaterThan and amountLessThan (negative)
+6. User uses amountGreaterThan with value of 200 and amountLessThan with value of 1000 (positive)
+
+-> Convert them into test cases with properly defined descriptions and steps and execute the test cases
+-> Manually: Postman
+
