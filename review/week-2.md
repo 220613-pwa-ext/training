@@ -22,6 +22,7 @@
         - URI (Uniform resource identifier)
             - ex. `/users`
         - Request Body
+            - Contains data that may be represented in a format such as JSON or XML
             - Optional
         - Request Headers
             - Optional
@@ -48,6 +49,7 @@
                         - You can connect this with the testing mindset where we should not only test the correct way of using the app, but also the incorrect way of using it (positive v. negative testing)
                         - In Python: **exceptions and exception handling** is important to understand
         - Response Body
+            - Contains data that may be represented in a format such as JSON or XML
             - Optional
         - Response Headers
             - Optional
@@ -74,15 +76,16 @@
             - Todos belong to a particular user resource
             - "One user can have many todos"
         - You can also get a single resource from a "sub-collection"
-            - ex. `/users/bachy21/todos/<todo id>`
+            - ex. `/users/bachy21/todos/10`
+                - 10 represents an id that uniquely identifies a particular todo
     - Singleton and Collection resources
         - Singleton: GET `/users/bachy21`
         - Collection: GET `/users`
     - Best practices for naming the URI
         - Use nouns to represent resources
         - Use - instead of _ to separate words in a resource
-            - ex. `/users/bachy21/user_info` is bad
-            - ex. `/users/bachy21/user-info` is good
+            - ex. `/users/bachy21/bio_info` is bad
+            - ex. `/users/bachy21/bio-info` is good
         - Use lowercase letters
         - Don't use CRUD function names in URIs
             - ex. POST `/createuser` is bad
