@@ -342,3 +342,74 @@
         - ex. `Check if the user gets "username and/or password is incorrect" message if they login with incorrect credentials`
     - It's usually possible to write way more negative test cases than positive test cases
         - Check for edge cases where a user could do something incorrectly, or input extreme values
+
+# Questions
+
+## Web Services
+* What two types of web services are most commonly used?
+* What is the modern way of building web services?
+* What communication protocol does REST use?
+* What is HTTP?
+* What are we using Postman for (in our training)?
+* How does the process of communication using HTTP work?
+* What components make up an HTTP request?
+* What 5 HTTP verbs are most commonly used?
+* What is the purpose of a URI?
+* What is the purpose of a request body?
+* What is JSON?
+* What components make up an HTTP response?
+* What are the categories of status codes?
+* If we encounter a 500 internal server error while developing our web API, what should we do about it?
+* What is the response body?
+* What is REST?
+* What are CRUD operations? What HTTP verbs/methods are associated with each letter in the CRUD acronym?
+* What are the 6 constraints of REST?
+* What are the best practices for naming your URIs in REST?
+* What are examples of singleton, collection, and sub-collection URIs?
+* What is the purpose of using query parameters v. path parameters?
+* What are the 3 levels of the Richardson Maturity model?
+
+## Flask
+* What is Flask?
+* What does flask provide us?
+
+## Python
+* What is object oriented programming?
+* What is the difference between a class and object?
+* If we have a class called `MyClass`, how do we create/instantiate/construct an object from that class?
+* What do objects contain?
+* What is the difference between a static method and an instance method?
+* What is the purpose of the `__init__(self)` method?
+* What is the purpose of the `__str__(self)` method?
+    * `__contains__(self, name)`
+    * `__len__(self)`
+    - etc.
+* What are the two types of errors in Python?
+* What are exceptions?
+* How do we handle exceptions?
+* How do we raise an exception?
+* How can we create a custom exeption?
+* What is the purpose of the `try` block?
+* What is the purpose of the `except` block?
+* What is the purpose of the `finally` block?
+* What are the 4 pillars of OOP?
+* What is encapsulation? How do we achieve encapsulation?
+* What is inheritance?
+    * What is the super() function used for?
+* What is polymorphism? What are the two types of polymorphism?
+* What is abstraction?
+* What is an abstract method?
+* How do we create an abstract class?
+* Are we required to implement an abstract method in the class that inherits the abstract class?
+
+## Testing Concepts
+* What is TDD?
+* What is the advantage of TDD?
+* Who writes unit tests?
+* Who writes integration tests?
+* Who writes end-to-end tests?
+* Which of the 3 levels are usually always automated?
+* Which of the 3 levels are either manual or automated?
+* What is a test scenario?
+* What is a test case?
+* What is the difference between positive and negative tests? What are some examples of positive and negative tests?
