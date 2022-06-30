@@ -38,3 +38,8 @@ VALUES
 INSERT INTO todos (description) 
 VALUES
 ('Go to yoga class');
+
+
+SELECT *
+FROM todos
+WHERE id = 1 and user_id = 1

@@ -1,0 +1,11 @@
+# Get accounts between a range
+if args.get('amountLessThan') is not None and args.get('amountGreaterThan') is not None:
+	# Invoke whatever you need to here
+# Get accounts up to an upper bound
+elif args.get('amountLessThan') is not None:
+	# Invoke whatever you need to here
+# Get accounts starting from a lower bound
+elif args.get('amountGreaterThan') is not None:
+	# Invoke whatever you need to here
+else:
+	# Get all accounts (no filtering constraints)
