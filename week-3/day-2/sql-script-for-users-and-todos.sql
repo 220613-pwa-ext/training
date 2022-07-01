@@ -13,7 +13,7 @@ CREATE TABLE todos (
 	id SERIAL PRIMARY KEY,
 	description VARCHAR(200) NOT NULL,
 	completed BOOLEAN NOT NULL DEFAULT false,
-	user_id INTEGER,
+	user_id INTEGER NOT NULL,
 	CONSTRAINT fk_users FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
