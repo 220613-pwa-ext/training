@@ -16,7 +16,7 @@ This is the training repository for the Python-Java with Automation batch starti
 | ---- | -------------- | --------- | ---------- |
 | 1 | Python | [day-1](https://miro.com/app/board/uXjVOtHw8pA=/?share_link_id=338516573304), [day-2](https://miro.com/app/board/uXjVOtbh1ts=/?share_link_id=519852569851), [day-3](https://miro.com/app/board/uXjVOsy0a_s=/?share_link_id=636704378349), [day-4](https://miro.com/app/board/uXjVOsBHAAE=/?share_link_id=173488968274), [day-5](https://miro.com/app/board/uXjVOsQPfhI=/?share_link_id=578898129378) | [review](./review/week-1.md) |
 | 2 | HTTP, REST, Flask, Python OOP | [day-1](https://miro.com/app/board/uXjVOrzhQcw=/?share_link_id=897787260212), [day-2](https://miro.com/app/board/uXjVOrEGWfw=/?share_link_id=48360575489), [day-3](https://miro.com/app/board/uXjVOrZvfFU=/?share_link_id=269869755413), [day-4](https://miro.com/app/board/uXjVOrZvfFU=/?share_link_id=875048102643), [day-5](https://miro.com/app/board/uXjVOqH0_5Q=/?share_link_id=325820228197) | [review](./review/week-2.md)
-| 3 | SQL, Psycopg, Unit testing, Mocking | [day-1](https://miro.com/app/board/uXjVOqf7R70=/?share_link_id=43962985364), [day-2](https://miro.com/app/board/uXjVOpwD-oI=/?share_link_id=601658154393), day-3 (none)
+| 3 | SQL, Psycopg, Unit testing, Mocking | [day-1](https://miro.com/app/board/uXjVOqf7R70=/?share_link_id=43962985364), [day-2](https://miro.com/app/board/uXjVOpwD-oI=/?share_link_id=601658154393), day-3 (none), [day-4](https://miro.com/app/board/uXjVOpUDt40=/?share_link_id=342888860213) | |
 ---
 
 # Weekly Expectations
