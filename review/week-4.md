@@ -1,0 +1,182 @@
+# Week 4 Review
+
+## Software environments
+1. Development Environment
+    - A shared server that developers use while working on the same project
+    - Changes are constantly being made and deployed to the dev environment so that developers can get quick feedback on changes they are making seemingly working or not
+2. Test Environment
+    - Allows QA engineers/testers to do automated/manual E2E testing
+    - Regression testing will be performed as well
+    - Changes made by developers are deployed here once they have met certain criteria for the development of a particular feature/requirement
+3. Staging/pre-prod environment
+    - Nearly an exact copy of the production environment
+        - Used to make sure that the software will work correctly based on production environment configurations/infrastructure
+4. Production environment
+    - This is the environment that actual live end-users utilize
+    - Example: if you access Facebook.com, you are accessing the production environment
+
+## Software Development Lifecycle (SDLC)
+* Describes the process for developing software
+* Phases
+    1. Requirements Phase
+        - Define the requirements of the system / what functionality should exist
+        - What the development team should be working to develop
+    2. Design Phase
+        - Design documents are created based on the requirements
+            - Examples
+                1. Database diagrams
+                2. Module functionality
+                3. Architecture diagrams
+                4. Functional logic of modules
+                5. Inputs and outputs of each module
+    3. Implementation Phase
+        - Developers will write code
+        - Longest phase of SDLC
+        - Unit tests and integration tests may be written
+    4. Testing Phase
+        - QA team/testers test the software
+        - Functional and non-functional testing occurs
+        - Defects that are detected are reported to developers to be fixed and then re-tested
+    5. Deployment + Maintenance Phase
+        - The application is released to the customer / deployed to the production server
+        - Application is monitored and any bugs reported by the customer are fixed, software is upgraded, enhanced, etc.
+* Philosophies
+    1. Waterfall
+    2. Agile
+    
+### Waterfall Philosophy
+* Philosophy of SDLC
+* Progress moves "downwards" and not back up
+    - Once you move to the next phase, there's no going back
+* Cons:
+    - Users may not know what they really want from the software without first trying it out
+    - Progression through phases occur without testing along the entire way, so problems may not be detected until the testing phase or even later
+    - Innovation can be stifled by following a strict plan
+* Pros:
+    - Easier for project managers to handle
+        - If a particular phase takes longer than expected, a PM might choose to shorten the length of another phase
+    - Good for projects that must be completed in one go instead of iteratively
+
+## Agile Philosophy
+* Philosophy of SDLC
+* Progress occurs iteratively through many iterations
+    - Iteration: A single cycle of the SDLC
+        - Every iteration has small changes that are made
+        - At the end of each iteration, software is released to the customer
+* Core values of Agile
+    1. Individuals and interactions over processes and tools
+        - People's skills should be recognized and utilized
+        - Face to face conversations are highly encouraged
+    2. Working software over comprehensive documentation
+        - Documentation can be important, but you want to make sure software is working first and foremast
+        - Working software is the primary measure of progress
+    3. Customer collaboration over contract negotiation
+        - Stakeholders should give input in all stages of the development process to show what should be prioritized and to evaluate progress of the iteration
+        - Stakeholder suggestions can be taken into account for future iterations
+    4. Responding to change over following a plan
+        - Change is inevitable
+        - Plans may not last
+        - The way in which a team works should be adaptive and minimize potential stress caused by change
+* User Stories
+    - User story: A requirement of an application (feature) written from the perspective of a user
+        - Format: As a <>, I want to <>, so that <>
+    - The details of the user story are laid out in acceptance criteria
+        - Acceptance criteria: a set of predefined requirements that are part of the **definition of done** required to mark a user story as complete
+            - Typically follow Given, When, Then format
+    - Example: As a user, I want to register, so that I can login
+        - Given that a user is at the registration page, when they enter a valid, untaken username and other valid information, then they should be able to register successfully
+        - Given that a user is at the registration page, when they enter a valid password and other valid information, then they should be able to register sucessfully
+    - Advantages of user stories
+        1. Give context and why something is being created
+        2. Helps to keep the customer in mind by seeing features from a perspective of a user
+        3. Acceptance criteria associated with a user story can help the development team to define what it means to be done
+    - Definition of Done
+        - Defines what it means to be done with development of a user story
+        - Criteria can vary by team. It is up to the team what their definition is
+            - Example criteria
+                - All acceptance criteria are met
+                - Product owner accepts the work that was produced
+                - Unit tests, integration tests, and E2E tests are written
+                - All tests are passing
+                - Code peer review performed
+                - Documentation updated
+
+## Scrum Framework (Agile)
+* Scrum is a framework for Agile that contains more details on how to actually be Agile
+* Scrum revolves around **sprints**
+    - Sprint: A period of 1 - 4 weeks (usually 2 weeks) where work is completed
+    - At the beginning of a sprint, a **sprint planning meeting** where the team determines what work (user stories) to accomplish
+    - Every day, there is a **daily scrum / daily standup meeting** where everyone on the team gives status updates. They let the team know what blockers they have that must be resolved to move forward with progress
+    - At the end of the sprint, there is a **sprint review meeting** where work is showcased by the team to various stakeholders and feedback is provided about the work. There is also a **sprint retrospective meeting** where the team gets together to see how they can improve for the next sprint
+* Scrum Team
+    1. Scrum Master
+        - One person
+        - Organizes the various Scrum meetings
+        - Helps team members the best they can with resolving impediments / blockers
+        - Servant leader mindset
+            - Scrum Master should not be the "boss"
+            - "What can I do to make the team more effective?"
+        - Makes sure the team and organization as a whole adheres to Scrum values, principles, and practices
+        - May be a developer that takes on this role or be a standalone role
+    2. Product Owner
+        - One person
+        - Serves as point of contact between customers and scrum team
+        - They don't own the product, they "own" the responsibility for the product's success
+            - The product owner is the one who gets credit/blame for the product's failure/success
+        - The product owner develops **user stories** for the product
+        - They are responsible for adding/removing/modifying user story items in the **product backlog**
+            - Product Backlog: collection of user stories that are to be assigned in future sprints
+                - Contains the vision for future features/developments to the product
+    3. Development team
+        - Software Engineers + Testers
+        - Responsible for developing the software
+        - Responsible for the **sprint backlog**
+            - Sprint backlog: a subset of items assigned during the **sprint planning meeting** from the product backlog to be completed in the current sprint
+                - Items cannot be removed from the sprint backlog without negotation with the product owner
+                - More items can be added if the team feels they can take on more work, however
+* Scrum Artifacts
+    1. Product backlog
+        - Collection of user stories to be tackled in future sprints
+        - Managed by product owner
+        - Vision of future developments to the product
+    2. Sprint backlog
+        - Subset of items assigned from the product backlog to be completed in current sprint
+        - Sprint planning meeting is where user stories to be added to the sprint backlog are decided upon
+        - Development team will perform story point estimation to gauge how long each user story will take to complete
+    3. Potentially shippable increment
+        - The state of the software at the end of each sprint
+        - Software should be working and deployable after each sprint
+        - Software should not be left in a non-functional, un-deployable state
+* Scrum ceremonies
+    1. Sprint planning meeting
+        - Determine what needs to be accomplished for the current sprint
+        - Determine which user stories from the product backlog will be assigned to the sprint backlog
+        - Story point estimation occurs (estimation of how long each user story will take to accomplish)
+        - No more than 8 hours
+    2. Daily scrum / daily standup meeting
+        - Typically happens first thing in the morning
+        - Often called daily standup since people actually stand during the meeting
+        - Team members discuss what they did the previous day, what they plan to do for the current day, and if they have any impediments/blockers
+        - No longer than 15 minutes
+    3. Sprint review meeting
+        - Showcase work to that was accomplished in current sprint to stakeholders
+        - Scrum master, product owner, dev team, and stakeholders participate
+        - Feedback can be received on the showcased work
+    4. Sprint retrospective meeting
+        - Discuss what went well, what didn't go well, and improvements that can be made for future sprints
+        - Scrum Master, product owner, and dev team participate
+        - Important part of improving team effectiveness
+    5. Product backlog refinement
+        - Review and clean up product backlog
+            - Large user stories are split into smaller user stories
+            - Details are added to user stories
+            - Clarifications are made to user stories
+            - Ambiguous or unclear user stories are modified or removed
+        - Product owner meets with dev team to ask for feedback regarding product backlog items
+* Story point estimation
+    - Story point: a metric used to measure how long a user story will take to complete
+        - Fibonacci sequence (1, 2, 3, 5, 8, 13, 21, ...) is often used
+    - User stories are assigned a story point value based on the time estimated for its completion
+    - Team velocity (how many story points the team completes per day/week/sprint) can be determined and help with future estimation of product timelines
+
+## Software Testing
