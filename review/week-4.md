@@ -328,3 +328,144 @@
         - Contains a summary of test suites planned/implemented/executed
         - Contains a summary of test cases planned/implemented/executed/passed/failed
         - Contains a summary of defects found
+* Types of testing
+    1. Verification testing
+        - Are we building the correct product?
+        - Check if requirements are correct in accordance with customer wants/needs
+        - Also known as static testing
+        - Focus on documentation to make sure there are not any mistakes or miscommunication
+        - Catch issues early before they make their way into the software being built
+    2. Validation testing
+        - Are we building the product correctly?
+        - Testing to see if the product meets the requirements
+        - Actual software is tested
+        - Two broad categories
+            - Functional testing
+            - Non-functional testing
+* Non-functional testing
+    - Category of validation testing
+    - Validating that performance, usability, and reliability of an application are acceptable
+    - Cannot be answered with a yes/no question
+        - Will be a qualitative or quantitative metric
+    - Subcategories
+        - Performance testing
+            - Load testing: examining how an application performs under certain loads
+                - Stress testing
+                    - See how the application behaves under high load
+                - Spike testing
+                    - See what happens if there's a sudden spike in load
+                - Ramp up/down testing
+                    - See what happens as load is gradually ramped up and ramped down
+        - Usability testing
+            - Is the application realistically usable?
+            - UX (user experience) testing
+            - Ex. can the user actually read the text?
+                - White background w/ white text
+                    - A human cannot read the text
+                    - An automated tool like Selenium may be able to
+* Functional testing
+    - Category of validation testing
+    - Testing to see if software functions as specified by the requirements
+    - Can be answered with yes/no
+        - Passing/failing?
+    - Functional testing levels
+        1. Unit test
+            - Fastest
+            - Least comprehensive
+            - Testing is performed on a single unit (method, conditional block of codes, etc. inside the method)
+            - Any dependencies are mocked
+            - Interacts directly with code
+                - Methods are directly invoked
+                - Contributes to code coverage
+            - PyTest (Python), JUnit (Java) typically used
+            - Automated
+        2. Integration test
+            - Fast
+            - Fairly comprehensive
+            - Testing is performed with modules connected (integrated) together
+                - Ex. Backend
+                    - Controller -> Service -> Dao -> in-memory database
+            - Interacts directly with code
+                - Methods are directly invoked
+                - Contributes to code coverage
+            - Automated
+        3. End-to-end (E2E) test
+            - Slower
+            - Covers a path from end to end
+                - Frontend -> Backend -> Database
+            - Tests are performed with interaction being the same as what a user would do when interacting with the application
+            - Manual or automated
+            - Does not interact directly with the code
+                - Does not contribute to code coverage
+        4. User acceptance test (UAT)
+            - Slowest
+            - Actual users test the software to determine if the software is acceptable for real-world usage
+            - Software is good in theory, but is it good in practice?
+            - Alpha testing
+                - In-house testing
+            - Beta testing
+                - Open beta (released to entire public)
+                - Closed beta (limited sign-ups for public)
+* Functional testing concepts
+    - Regression testing
+        - Testing to ensure that a recent change to the application did not affect existing features
+        - Full or partial execution of existing test cases that were already previously developed to ensure existing functionalities are working
+        - Can be expensive and time consuming
+            - Test cases may need to be selectively chosen for execution
+            - Manual test cases are a main contributor to cost
+                - You're paying people to spend time executing manual test cases
+        - Cost of regression testing can be reduced by automating test cases
+    - Smoke testing
+        - Testing the most critical functionalities of an application to make sure the build is stable enough for further testing
+        - Smoke testing should be performed before regression testing
+            - "Where there's smoke, there's fire"
+            - If the most critical functionalities are not working, the application is likely "on fire"
+            - Should be fixed before moving forward with extensive regression testing
+        - Subset of smoke testing called sanity testing
+            - Sanity testing is testing to make sure recent code changes are working as expected
+    - Whitebox v. blackbox testing
+        - Whitebox test
+            - Tests that interact directly with code
+            - Require direct knowledge of the code
+        - Blackbox test
+            - Tests that do not interact directly with code
+            - Do not require knowledge of the code
+        - Testing levels
+            - Unit (whitebox)
+            - Integration (whitebox)
+            - E2E tests (blackbox)
+            - User acceptance tests (blackbox)
+    - Positive v. negative testing
+        - Positive test: test case that acts on a scenario in which a user is utilizing an application's functionality "correctly"
+        - Negative test: test case that acts on a scenario in which a user is utilizing an application's functionality "incorrectly"
+        - Example: login
+            - User enters valid credentials (positive scenario)
+            - User enters invalid credentials (negative scenario)
+    - Exploratory testing
+        - An approach to testing that relies on the skills/talent of the tester to explore and uncover defects
+        - Simultaneously learning, designing, and executing test cases
+        - Can be used in situations where the system's requirements may not be well defined
+    - Exhaustive testing
+        - Testing every possible combination
+        - Not feasible
+        - "Exhaustive testing is impossible" <- testing mindset
+        - Utilize blackbox testing techniques to establish a baseline for test cases that must be developed
+    - Manual testing
+        - Test cases being executed by hand
+        - A tester will use the application and see if its functionalities are working
+    - Automation testing
+        - A programming language is utilized to automate the steps that should be taken for a particular test case
+        - The test cases are codified as a scripted series of steps using a programming language and then from that point on, the computer can perform execution of the test case at the "push of a button" over and over
+        - Especially useful in reducing the cost of regression testing
+* Blackbox testing techniques
+    - Equivalence partitioning
+        - Divide test values into smaller intervals
+    - Boundary value analysis
+        - Choose test values at the boundaries
+    - Decision table testing
+        - Decision table: tabular representation of inputs and conditions
+        - Helps in covering possible scenarios for a feature
+    - State transition testing
+        - State transition diagram: visualization of the flow of transitioning from one state to another
+        - Useful in covering possible scenarios for a feature that depends on state
+            - Ex. Limited number of login attempts may impact what the expected conditions are
