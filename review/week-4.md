@@ -180,3 +180,151 @@
     - Team velocity (how many story points the team completes per day/week/sprint) can be determined and help with future estimation of product timelines
 
 ## Software Testing
+* Testing Mindset
+    1. Start testing EARLY
+        - Testing isn't necessarily on the implemented software itself
+        - Testing starts with requirements
+            - Do the requirements have ambiguities, fallacies, or contradictions?
+            - If the requirements have errors, they could show up as defects/bugs in the application later
+        - Proactive collaboration with other members of the development team during earlier phases of the SDLC
+    2. Test software to find defects
+        - You should NOT test software to avoid finding defects
+        - You SHOULD test software so that you can find defects that can then be fixed
+    3. 100% bug free is impossible
+        - A tester should never say an application is "bug-free"
+            - Upper managment or the stakeholders might want to hear "bug-free", but resist that urge
+        - A more appropriate statement would be "we conducted testing on X, Y, and Z, but did not find any defects"
+    4. Exhaustive testing is impossible
+        - Exhaustive testing: testing many different combinations of inputs, sequences of button presses, etc.
+            - All permutations are tested
+        - Realistically impossible if there's many different inputs, buttons, sequences of events, etc.
+            - Ex. 10 buttons -> 10! = 3628800 possible combinations
+        - "Work smart, not hard"
+            - Test scenarios that are the most common a user would take
+            - Establish positive test cases first, then move to negative test cases
+            - Utilize **black box testing techniques** such as equivalence partioning, boundary value analysis, decision tables, state transition diagrams, etc.
+    5. Testing is context-based
+        - What type of application? What company?
+        - Ex. banking application
+            - Government regulations
+            - Subject to audits
+    6. Beware of the pesticide paradox
+        - As software matures and becomes more stable in the long run, the same test cases being executed over and over again as part of **regression testing** are less likely to fail over time and uncover defects
+        - Test cases must be continuously updated with different input data or new test cases designed
+        - Analogy to pesticides comes from bugs evolving resistance = new pesticide required
+    7. Defects tend to cluster
+        - 80% of the defects come from 20% of the modules (Pareto principle 80/20 rule)
+            - Usually newer modules will have more defects
+            - Save time by focusing on the most defect prone modules
+* Testing Lifecycle
+    1. Requirements analysis phase
+        - Gather and analyze requirements
+        - Review project documents, project structure, code, etc.
+        - Analyze anything that gives a better understanding of the system/application
+    2. Test planning phase
+        - Answer the questions
+            - What to test?
+            - How to test?
+            - When to test?
+        - Activities
+            - Identifying what resources are available
+            - Cost/time estimation
+            - Team structure
+            - Test plan document creation
+        - Inputs
+            - Requirements
+            - Project documents
+        - Output
+            - Test plan document
+    3. Test design phase
+        - Activities
+            - Prepare test scenarios
+            - Prepare test cases
+                - Contained in test case document
+            - Review test cases
+            - Create traceability matrix
+        - Input
+            - Requirements
+            - Project documents
+            - Test plan document
+        - Output
+            - Test case document
+            - Traceability matrix
+    4. Test execution
+        - Activities
+            - Execute test cases
+                - Manual or
+                - Automated
+            - Identify defects
+            - Preparation of test report / test log
+        - Input 
+            - Requirements
+            - Test plan document
+            - Test case document
+            - Software to be tested
+        - Output
+            - Test report
+                - How many tests succeeded
+                - How many tests failed
+    5. Defect reporting/tracking
+        - Activities
+            - Preparation of defect report
+        - Inputs
+            - Test cases
+            - Test report
+        - Output
+            - Defect report
+    6. Test cycle closure
+        - Activities
+            - Analyze test reports
+            - Analyze defect reports
+            - Evaluate exit criteria
+        - Inputs
+            - Test report
+            - Defect report
+        - Output
+            - Test summary report
+* Test Documents
+    1. Test plan document
+        - Detailed document that describes
+            - Objectives
+            - Test strategy
+            - Schedule
+            - Time/cost estimations
+            - Deliverables
+            - Available resources
+    2. Test case document
+        - Document that contains test cases
+        - Test case: a set of actions to be taken to validate functionality of an application
+        - Each test case contains information such as
+            - Test case ID
+            - Test case description
+            - Test data
+            - Expected result
+            - Actual result
+            - Pass/Fail?
+    3. Requirements Traceability matrix
+        - Document that relates the requirements with test scenarios + test cases
+        - Helps to keep track of what test cases exist for a particular feature and to determine whether additional test cases are required
+    4. Test report
+        - Document containing the results of test execution
+        - What tests passed or failed?
+    5. Defect report
+        - Document/documents or records containing information about each defect discovered
+        - Information may include for each defect, a
+            - Defect ID 
+            - Defect description
+            - Steps to replicate
+            - Date raised
+            - Supporting documentation
+            - Detected by
+            - Status
+            - Fixed by
+            - Date closed
+            - Severity
+            - Priority
+    6. Test summary report
+        - Document that summarizes the results of the testing lifecycle
+        - Contains a summary of test suites planned/implemented/executed
+        - Contains a summary of test cases planned/implemented/executed/passed/failed
+        - Contains a summary of defects found
