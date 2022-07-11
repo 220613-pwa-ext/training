@@ -1,7 +1,7 @@
 # Project 1: Expense Reimbursement System
 
 ## Summary
-The expensive reimbursement system (ERS) will manage the process of reimbursing employees for expenses incurred on company time. Employees in the company can login and submit requests for reimbursement and view their past tickets and pending requests. Finance managers can log in and view all reimbursement requests and past history for all employees in the company. Finance managers are authorized to approve and deny requests for expense reimbursement.
+The expense reimbursement system (ERS) will manage the process of reimbursing employees for expenses incurred on company time. Employees in the company can login and submit requests for reimbursement and view their past tickets and pending requests. Finance managers can log in and view all reimbursement requests and past history for all employees in the company. Finance managers are authorized to approve and deny requests for expense reimbursement.
 
 ## Database Schema
 Here is the suggested schema for simplicity. The project MUST utilize and display at least the data shown in this table
