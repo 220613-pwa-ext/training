@@ -96,12 +96,15 @@ Here is the suggested schema for simplicity. The project MUST utilize and displa
         - Required to MANUALLY execute the test cases on finished application (frontend + backend)
         - Required to provide a report on # of test cases created for each user story, how many passed/failed
 
-## Suggestions
+## Project 1 suggested step by step approach 
 1. Create multiple acceptance criteria for each user story first (there are 8 user stories total)
 2. Use the acceptance criteria to create test scenarios
 3. Use the test scenarios to create test cases (E2E tests)
 4. Implement the application (frontend + backend)
-    - Start with backend
+    - Start with the databse
+        - Create the database tables
+        - Insert some sample data into the database
+    - Move onto backend
         - Think about what endpoints are required
         - Write these down
         - Implement the endpoints
