@@ -1,0 +1,66 @@
+* {
+    font-size: 16px;
+}
+
+.html-info {
+    color: green;
+    font-family: sans-serif
+}
+
+.introduction {
+    color: orange;
+}
+
+h2 {
+    color: red;
+}
+
+#fruit-unordered-list {
+    color: rgb(16, 141, 208);
+}
+
+#fruit-ordered-list {
+    color:rgb(59, 153, 86)
+}
+
+tbody tr {
+    color: pink;
+}
+
+thead tr {
+    color: purple;
+}
+
+.what-is-html {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: gray;
+    height: 500px;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+#my-id-1 {
+    border: 5px solid black;
+    background-color: green;
+    color: black;
+}
+
+#my-id-2 {
+    border: 5px dashed black;
+}
+
+#links {
+    margin: 40px;
+}
+
+/* Select a tags that are descendants of an element with an id of links */
+#links a {
+    margin-left: 10px;
+    margin-right: 10px;
+}

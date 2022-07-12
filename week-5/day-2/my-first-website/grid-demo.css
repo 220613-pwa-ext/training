@@ -1,0 +1,40 @@
+/* This is known as a "CSS reset" where we set all of the default margins, paddings to 0 and change the way that
+the content dimensions are calculated to be based on border */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: "a a a"
+                        "b c c"
+                        "d d e";
+    height: 1000px;
+}
+
+#apple {
+    grid-area: a;
+    border: 5px solid red;
+}
+
+#banana {
+    grid-area: b;
+    border: 5px dashed yellow;
+}
+
+#celery {
+    grid-area: c;
+    border: 5px dashed green;
+}
+
+#dragonfruit {
+    grid-area: d;
+    border: 5px solid purple;
+}
+
+#eggplant {
+    grid-area: e;
+    border: 5px solid purple;
+}
