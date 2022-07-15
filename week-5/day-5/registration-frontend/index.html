@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+    <div class="container has-background-light">
+        <div class="columns is-justify-content-center">
+            <div class="column is-6 has-background-primary">
+                <h1 class="is-size-1 has-text-centered">Registration</h1>
+                <div class="field">
+                    <label class="label">Username</label>
+                    <div class="control">
+                      <input class="input" type="text" placeholder="Username" id="username-input">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Password</label>
+                    <div class="control">
+                      <input class="input" type="text" placeholder="Password" id="password-input">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">First Name</label>
+                    <div class="control">
+                      <input class="input" type="text" placeholder="First Name" id="firstname-input">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Last Name</label>
+                    <div class="control">
+                      <input class="input" type="text" placeholder="Last Name" id="lastname-input">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Phone Number</label>
+                    <div class="control">
+                      <input class="input" type="text" placeholder="XXX-XXX-XXXX" id="phone-input">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Email Address</label>
+                    <div class="control">
+                      <input class="input" type="text" placeholder="test@email.com" id="email-input">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Gender</label>
+                    <div class="control">
+                      <label class="radio">
+                        <input type="radio" name="gender" value="male">
+                        Male
+                      </label>
+                      <label class="radio">
+                        <input type="radio" name="gender" value="female">
+                        Female
+                      </label>
+                      <label class="radio">
+                        <input type="radio" checked name="gender" value="other">
+                        Other
+                      </label>
+                    </div>
+                </div>
+        
+                <div class="field">
+                    <div class="control">
+                      <button id="register-submit-btn" class="button is-link">Submit</button>
+                    </div>
+                </div>
+                <div id="registration-error-messages">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/index.js"></script>
+</body>
+</html>
