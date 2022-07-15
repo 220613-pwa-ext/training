@@ -20,6 +20,7 @@ def loginstatus():
             "message": "You are not logged in"
         }, 200
 
+
 @uc.route('/logout', methods=['POST'])
 def logout():
     session.clear()

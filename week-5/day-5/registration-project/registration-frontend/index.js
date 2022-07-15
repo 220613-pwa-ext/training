@@ -18,6 +18,8 @@ registrationSubmitButton.addEventListener('click', async () => {
     }
 
     let res = await fetch('http://127.0.0.1:8080/users', {
+            'credentials': 'include', // very important to make sure that login and everything else works, because
+            // 'credentials': 'include' is the option that will tell the browser to include cookies as part of the request
             'method': 'POST',
             'headers': {
                 'Content-Type': 'application/json'
