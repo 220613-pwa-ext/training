@@ -1,12 +1,20 @@
 import re
 
 from dao.user_dao import UserDao
+from exception.login import LoginError
 from exception.registration import RegistrationError
-
 
 class UserService:
     def __init__(self):
         self.user_dao = UserDao()
+
+    def login(self, username, password):
+        user_obj = self.user_dao.get_user_by_username_and_password(username, password)
+
+        if user_obj is None:
+            raise LoginError("Invalid username and/or password")
+
+        return user_obj.to_dict()
 
     def add_user(self, user_obj):
 
@@ -23,6 +31,9 @@ class UserService:
 
         if self.user_dao.get_user_by_username(user_obj.username) is not None:
             registration_error.messages.append("Username is already taken")
+
+        if user_obj.username == '':
+            registration_error.messages.append("Username must not be blank")
 
         # Password validation
         alphabetical_characters = "abcdefghijklmnopqrstuvwxyz"
