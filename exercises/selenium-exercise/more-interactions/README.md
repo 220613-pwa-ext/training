@@ -1,5 +1,14 @@
 # More Interactions Exercise
-Given the HTML located [here](https://github.com/220613-pwa-ext/training/blob/main/week-6/day-4/more-selenium-interactions-frontend/index.html), perform the following tasks using Selenium WebDriver in Python:
+Given the HTML page located [here](https://github.com/220613-pwa-ext/training/blob/main/week-6/day-4/more-selenium-interactions-frontend/index.html), perform the following tasks using Selenium WebDriver in Python:
+
+1. Host the HTML page using liveserver
+2. Set up a Python project
+    - Enter the virtual env `soure venv/Scripts/activate`
+    - `pip install selenium`
+    - Drag and drop the appropriate web driver into your project
+3. Instantiate the webdriver object in Python
+4. Use the .get method on the webdriver object to go to the webpage hosted on live server
+5. Perform the interactive tasks below:
 
 * Select various options from the dropdown using all 3 methods
     - select_by_index
