@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Selenium Interactions</title>
+</head>
+<body>
+    <h1>More Selenium Interactions</h1>
+    <h2>Dropdown Demo</h2>
+    <select name="vehicle_type" id="vehicle">
+        <option value="truck">Truck</option>  <!-- Index 0 -->
+        <option value="sedan">Sedan</option>  <!-- Index 1 -->
+        <option value="crossover">Crossover</option> <!-- Index 2-->
+        <option value="suv">SUV</option> <!-- Index 3 -->
+    </select>
+
+    <h2>Getting the value of an attribute from an element</h2>
+    <p id="someid" class="someclass" data-testing="12345" name="somename">Lorem ipsum dolor sit amet.</p>
+
+    <h2>Radio Buttons</h2>
+    <label>Male</label>
+    <input type="radio" name="gender" value="male" />
+    <label>Female</label>
+    <input type="radio" name="gender" value="female" />
+    <label>Other</label>
+    <input type="radio" name="gender" value="other" />
+
+    <h2>Checkboxes</h2>
+    <p>Select fruits that you like</p>
+    <label>Apple</label>
+    <input type="checkbox" name="liked_fruits" value="apple">
+    <label>Banana</label>
+    <input type="checkbox" name="liked_fruits" value="banana">
+    <label>Mango</label>
+    <input type="checkbox" name="liked_fruits" value="mango">
+    <label>Dragonfruit</label>
+    <input type="checkbox" name="liked_fruits" value="dragonfruit">
+
+    <h2>Alerts</h2>
+    <button id="regular-alert-btn">Regular Alert</button>
+    <button id="confirm-alert-btn">Confirm Alert</button>
+    <button id="prompt-alert-btn">Prompt Alert</button>
+
+    <script>
+        regularAlertBtn = document.querySelector('#regular-alert-btn');
+        regularAlertBtn.addEventListener('click', () => {
+            alert('Hello there!')
+        })
+
+        confirmAlertBtn = document.querySelector('#confirm-alert-btn');
+        confirmAlertBtn.addEventListener('click', () => {
+            confirm("Do you wish to confirm?")
+        })
+
+        promptAlertBtn = document.getElementById('prompt-alert-btn')
+        promptAlertBtn.addEventListener('click', () => {
+            age = prompt("Enter your age:")
+            console.log(age)
+        })
+    </script>
+</body>
+</html>
