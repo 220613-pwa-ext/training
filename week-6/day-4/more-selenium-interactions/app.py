@@ -1,11 +1,17 @@
 import time
 
 from selenium import webdriver
+from selenium.webdriver import ActionChains, Keys
 from selenium.webdriver.common.alert import Alert
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 
-driver = webdriver.Chrome('./chromedriver.exe')  # Instantiate the webdriver object
+c_options = webdriver.ChromeOptions()
+c_options.add_argument("--incognito")  # Indicates we want an incognito window
+c_options.add_argument("start-maximized")  # Indicates we want the window to be maximized
+# c_options.add_argument("--headless")  # Indicates we don't want the browser GUI to pop up
+
+driver = webdriver.Chrome('./chromedriver.exe', options=c_options)  # Instantiate the webdriver object
 
 driver.get("http://127.0.0.1:5500")
 
@@ -55,6 +61,24 @@ prompt_alert_button.click()
 alert_obj.send_keys("20")
 time.sleep(1)
 alert_obj.accept()
+
+
+another_page_link = driver.find_element(By.LINK_TEXT, "Another Page")
+another_page_link.click()
+# Switching to child window
+window_handles = driver.window_handles  # A list of all window handles that are open
+child_window = window_handles[1]  # second element in window_handles
+driver.switch_to.window(child_window)
+p_another_page = driver.find_element(By.ID, "another-page-paragraph")
+print(p_another_page.text)
+# Switch back to previous window
+driver.switch_to.window(window_handles[0])
+
+# Action chain example
+input_element = driver.find_element(By.ID, "action-chain-input")
+action_chain = ActionChains(driver)
+action_chain.click(input_element).key_down(Keys.SHIFT).send_keys("hello world").perform()
+
 
 time.sleep(10)
 driver.quit()  # Quit the driver
