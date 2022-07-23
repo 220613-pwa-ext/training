@@ -450,7 +450,58 @@
                 - `child`
                 - `ancestor`
                 - `descendant`
-
-
-        
-
+    - Page object model
+        - Object oriented based design pattern
+        - We create classes that represent blueprints for our webpages
+        - These classes contain methods that return WebElement objects from the page
+        - Advantages
+            - Reusability: if multiple test cases/scripts use the same element, we reduce redundancy of typing the locators over and over again for each test case/script
+            - Maintainability: if many test cases/scripts rely on the same element, when the locator no longer works, we only need to update the locator in a single location instead of in all of the test cases/scripts independently
+            - Readability: it is easier to understand what is happening (assuming programming fundamentals are solid)
+    - Selenium page navigation
+        - `driver.back()` to go back a page
+            - or `driver.execute_script('window.history.go(-1)')`
+        - `driver.forward()` to go forward a page
+            - or `driver.execute_script('window.history.go(1)')`
+        - `driver.refresh()` to refresh the page
+            - or `driver.execute_script('window.location.reload()')`
+    - Dealing with dropdowns (Selenium)
+        - Find the `select` HTML element that represents the dropdown
+            - `select_element = driver.find_element(By.ID, "vehicle")`
+        - Create a "Select" object that then allows us to select options from the dropdown
+            - `dropdown = Select(select_element)`
+        - Use one of the three ways to select a particular option
+            1. `dropdown.select_by_index(1)`
+            2. `dropdown.select_by_value('suv')`
+            3. `dropdown.select_by_visible_text('Crossover')`
+    - Retrieving attribute values (Selenium)
+        - Find element
+            - `p1 = driver.find_element(By.ID, 'someid')`
+        - Retrieve value of attribute
+            - `p1.get_attribute('class')`
+    - Dealing with JavaScript alerts (Selenium)
+        - Create an "Alert" object, passing in the WebDriver object as an argument to the constructor
+            - `alert_obj = Alert(driver)`
+        - Use one of the following methods to dismiss, or accept the alert
+            - `alert_obj.dismiss()`
+            - `alert_obj.accept()`
+        - For any alert that requires text to be entered, use
+            - `alert_obj.send_keys('text here')`
+            - and then `alert_obj.accept()`
+    - Switching windows (Selenium)
+        - Get the list of window handles
+            - `window_handles = driver.window_handles`
+        - Select the window handle you would like to switch to
+            - `child_window = window_handles[1]`
+        - Switch to the window
+            - `driver.switch_to.window(child_window)`
+    - Action Chains (Selenium)
+        - Allows for advanced actions to occur
+        - Actions can be chained together and then performed
+            - `action_chain = ActionChains(driver)`
+            - `action_chain.click(input_element).key_down(Keys.SHIFT).send_keys("hello world").perform()`
+                - Click on input element
+                - Hold down shift key
+                - Type in hello world
+                - **Result: HELLO WORLD in the input element**
+    
