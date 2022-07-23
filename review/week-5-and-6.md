@@ -382,15 +382,20 @@
             - `Python`: `driver.get('http://google.com')`
         5. Locate elements using `driver.find_element(..., ...)` or `driver.find_elements(..., ...)`
         6. Perform various actions on those elements
+    - Finding elements
+        - `driver.find_element(<locator>, <value>)`
+            - Returns a WebElement object that represents the first occurrence that matches the locator in the HTML document
+        - `driver.find_elements(<locator>, <value>)`
+            - Returns a list of WebElement objects that represent all locator matches in the HTML document 
     - Selenium Locators
-        - By.ID
-        - By.CLASS_NAME
-        - By.NAME
-        - By.TAG_NAME
-        - By.LINK_TEXT
-        - By.PARTIAL_LINK_TEXT
-        - By.XPATH
-        - By.CSS_SELECTOR
+        - By.ID: id attribute
+        - By.CLASS_NAME: class attribute
+        - By.NAME: name attribute
+        - By.TAG_NAME: element name
+        - By.LINK_TEXT: full match of `<a>` tag text
+        - By.PARTIAL_LINK_TEXT: partial match of `<a>` tag text
+        - By.XPATH: XPath
+        - By.CSS_SELECTOR: CSS selector
     - XPath
         - A set of syntax/rules that allows for traversal through nodes in a document
         - Most powerful way to locate elements
