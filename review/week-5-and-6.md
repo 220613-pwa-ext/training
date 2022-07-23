@@ -255,3 +255,61 @@
         - Browser API to send HTTP requests
         - Utilizes `fetch()` function
 
+## Testing concepts expanded
+* Defect Lifecycle
+    - Series of steps that are performed when a defect is found
+    - Steps/phases
+        1. A new defect is created (new)
+        2. The defect is then assigned to a developer to be fixed (assigned)
+        3. Defect is now open (open)
+        4. Developer fixes defect (fixed)
+        5. Wait for tester to retest (pending retest)
+        6. Tester retests to make sure defect is gone (retest)
+        7. If defect is still there, go back to step 3
+        8. If defect is fixed, verify with manager for sign-off (verify)
+        9. Close defect (closed)
+* Defect report
+    - Defect ID
+    - Defect description
+    - Steps to replicate
+    - Detected by
+    - Status
+    - Date closed
+    - Severity
+    - Priority
+* Severity and Priority
+    - Severity
+        - Impact that a defect has on the operation of a component or system
+        - Levels
+            - Critical
+                - A defect that blocks other functionalities from being tested
+                - Ex: if users can't log in, can't test features that require being logged in
+            - Major
+                - A defect that prevents major functionalities from working, but is not blocking other functionalities
+                - Ex: about me page is not working
+            - Minor
+                - Something that isn't working as expected, but doesn't really affect functionality
+                - Ex: login error message not showing
+            - Low
+                - Cosmetic issues
+                - Ex: typos, alignment issues
+    - Priority
+        - How important fixing the defect is
+        - Business considerations
+        - Levels
+            - High
+                - Affects revenue and reputation of company
+            - Medium
+                - Don't affect customer systems but rather internal systems
+            - Low
+                - What is fixed after all high and medium priority defects are addressed or additional labor/resources are available
+    - Severity v. Priority
+        - Often correlated, but not always
+        - Examples
+            - Users cannot log in
+                - Critical severity, High priority
+            - Company name on homepage is misspelled
+                - Low severity, High priority
+            - Admin is unable to add new employees to the reimbursement system
+                - Critical severity, low priority (because hiring freeze)
+        
