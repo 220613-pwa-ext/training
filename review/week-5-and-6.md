@@ -504,4 +504,28 @@
                 - Hold down shift key
                 - Type in hello world
                 - **Result: HELLO WORLD in the input element**
+    - Explicit v. Implicit waits
+        - Explicit: state EXACTLY what you are waiting for
+            - Use the WebDriverWait object
+            - `WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "someid"))`
+            - By default will check every 500ms for expected condition
+            - `10` represents the number of seconds it will wait for a maximum of (so that we don't wait forever if the expected condition doesn't happen)
+            - Expected conditions
+                - title_is
+                - title_contains
+                - presence_of_element_located
+                - visibility_of_element_located
+                - visbility_of
+                - presence_of_all_elements_located
+                - text_to_be_present_in_element
+                - text_to_be_present_in_element_value
+                - element_to_be_clickable
+                - alert_is_present
+                - etc
+        - Implicit: is a GLOBAL wait that applies directly to the WebDriver object itself rather than a specific thing to happen
+            - Tells WebDriver object to poll the DOM for a certain maximum amount of time if an element is not immediately available
+            - `driver = webdriver.Chrome('./chromedriver.exe')`
+            - `driver.implicitly_wait(10)`
+                - Wait a maximum of 10 seconds for any element that is not immediately available
+                - Poll every 500ms by default
     
