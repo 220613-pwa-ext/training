@@ -1,0 +1,257 @@
+# Week 5 + 6 Review
+
+# Week 5
+* HTML
+    - HyperText Markup Language
+    - Current version is HTML5
+        - `<!DOCTYPE html>` used to define that a particular document is HTML5
+    - Defines the structure of a webpage
+    - Consists of HTML elements
+        - Elements are defined using `tags`
+        - Elements can be nested inside of other elements (parent - child relationships)
+    - Two types of tags
+        1. Non self-closing tags
+            - Opening tag
+                - `<p>`
+            - Closing tag
+                - `</p>`
+        2. Self-closing tags
+            - `<img src="http://mywebsite.com/cat.jpg">`
+    - HTML Attributes
+        - Define the metadata for a particular HTML element
+        - Key-value pairs
+        - Global attributes
+            - `style`
+            - `class`
+                - A particular value can be used for multiple elements
+            - `id`
+                - A particular value can be used for only a single element (unique)
+        - Other attributes
+            - `src`
+            - `rel`
+            - etc.
+    - Common HTML elements
+        - Heading
+            - `h1` through `h6`
+        - Paragraph
+            - `p`
+        - Image
+            - `img`
+        - Boilerplate elements
+            - `html`
+            - `body`
+            - `head`
+        - General elements
+            - `div`
+                - Block element
+            - `span`
+                - Inline element
+    - Block element
+        - Takes up the entire width of the parent's content space
+    - Inline element
+        - Only takes up as much width as necessary
+    - Semantic v. Nonsemantic elements
+        - Semantic: clearly communicates its meaning to the browser AND developers reading the HTML
+            - `article`
+            - `aside`
+            - `details`
+            - `footer`
+            - `header`
+            - `main`
+            - `nav`
+            - `section`
+            - Are typically block level elements and behave the same as a div
+        - Non-semantic: does not clearly communicate what the element's meaning/purpose is
+            - `div`
+            - `span`
+* CSS
+    - Ways to include CSS
+        - Inline
+            - style attribute of an HTML element
+                - `<p style="color: red;">`
+        - Internal
+            - `<style></style>` element nested in `head` tag
+            - Define CSS using same syntax as external
+        - External
+            - External .css file
+            - Use `<link rel="stylesheet" href="mycssfile.css" />` to utilize a .css file
+    - Syntax
+        - `#my-id p { color: red; background-color: blue; }`
+            - `<selector> { <css property>: <property value>; <css property 2>: <property value> }`
+        - Consists of "declarations"
+            - `<css property>: value`
+        - The curly braces `{}` is a declaration block
+        - `#my-id p` is an example of a combination selector (descendant selector)
+            - "Select p tags that are children of an element with an id of my-id"
+    - Selectors
+        - `*`: universal
+        - `#id`: id
+        - `.class`: class
+        - `div p`: descendant selector
+    - CSS Precedence (highest to lowest)
+        - Inline (style attribute)
+        - #id
+        - .class
+        - Tag name
+        - Universal
+    - CSS inheritance
+        - Some properties are inherited from parent element, but not all
+        - Typically, it's the text related styling that is inherited such as `color` or `font-size`
+    - CSS Box Model
+        - Content
+            - The actual content itself
+                - Text
+                - Child elements
+        - Padding
+            - Space between content and border
+        - Border
+            - The section that demarcates where the element "ends"
+        - Margin
+            - The space between the element and other elements
+        - Note: Content + Padding are part of the "fill-area", or the area where background color and background images can be applied
+    * CSS Flexbox
+        - A way to produce layouts for the webpage
+        - 1 Dimensional (1D)
+        - Elements are aligned along the main axis
+            - By default, the main axis is horizontal but can be made vertical
+    * CSS Grid
+        - A way to produce layouts for the webpage
+        - 2 Dimensional (2D)
+        - Elements can be placed within the 2D grid
+* JavaScript
+    - A programming language that can be used in
+        1. Servers (usually with node.js)
+        2. Web browsers
+            - DOM Manipulation to add/remove/modify HTML elements from the DOM
+            - Fetch API to send HTTP requests and receive data back
+            - Chrome uses the V8 engine to run JavaScript
+    - Traditionally interpreted, but also has some ability to be compiled
+    - High-level, multi-paradigm, interpreted language
+    - Including JS
+        - Internal
+            - Put JS code between `<script></script>` tags
+        - External
+            - Use `<script src="myjsfile.js></script>`
+                - `src` attribute to specify external js file
+        - Script tag should either be placed at the BOTTOM of the `body` element or in the `head` with a `defer` attribute
+    - Variable declaration types
+        - `var`
+            - Two possible scopes
+                - global
+                - function
+            - hoisted
+        - `let`
+            - Three possible scopes
+                - global
+                - function
+                - block
+            - NOT hoisted
+        - `const`
+            - Is a constant (cannot be given a new value)
+            - Three possible scopes
+                - global
+                - function
+                - block
+            - NOT hoisted
+    - Datatypes
+        - number
+        - string
+        - boolean
+        - null
+        - undefined
+        - object
+    - Functions
+        - Reusable blocks of code that can be executed over and over again
+        - Take inputs (parameters)
+        - Produce outputs (return)
+        - 3 types
+            - Named functions
+                - `function myFunc() {}`
+            - Anonymous functions
+                - Don't have a name
+                - `function() {}`
+            - Arrow functions
+                - Don't have a name
+                - `() => {}`
+                - The `this` keyword is based on the `this` keyword's value within the lexical scope that the arrow function was defined within
+    - Objects
+        - Similar to dictionaries in Python
+        - Composed of key-value pairs
+        - Ways to create an object
+            - `{}` Object literal syntax
+            - Function constructors
+            - Classes (ES6)
+    - JS Arrays
+        - Similar to lists in Python
+        - Indexed starting at 0
+        - Length of a list can be retrieved using `.length` property
+        - Methods
+            - `push` to add to end of an array
+            - `pop` to remove from end of an array
+            - `unshift` to add to the beginning of an array
+            - `shift` to remove from the beginning of an array
+    - DOM Manipulation
+        - DOM: Document object model
+            - HTML elements are modelled as `nodes` in a tree
+            - Parent nodes connect to child nodes
+            - The root element of the tree is the `document` object
+        - Selecting elements
+            - `document.getElementById('myid')`
+            - `document.getElementsByName('myname')`
+            - `document.getElementsByTagName('p')`
+            - `document.getElementsByClassName('myclass')`
+            - `document.querySelector('#myid p')`
+                - Provides ability to use CSS selectors to select elements from DOM
+                - Gets the first occurrence
+            - `document.querySelectorAll('#myid p')`
+                - Provides ability to use CSS selectors to select elements from DOM
+                - Returns a collection of elements that match
+    - Events
+        - "Things" that happen to HTML elements
+            - `click`
+            - `load`
+            - `keydown`
+            - `keyup`
+            - `mouseover`
+            - `mouseout`
+            - etc
+        - Can select an element from the DOM and add an event listener to it
+            - `let myElement = document.getElementById('myelementid')`
+            - `myElement.addEventListener('click', myCallbackFunction)`
+        - Event listener: is attached to a particular element and listens for events to occur on that element
+            - When event occurs, callback function is invoked
+        - Callback function: A function that is passed into a function as an argument and called at a later point in the future
+        - Bubbling and Capturing
+            - Events are not isolated to the target element on which a particular event occurred
+            - Two phases
+                1. Capturing: first phase
+                2. Bubbling: second phase
+            - An event starts out at the root element (`html`) and works its way down to the target element (capturing phase)
+            - Once event reaches the target element, it works its way back up to each parent until it reaches the `html` element again (bubbling phase)
+            - By default, event listeners listen for events while they're in the **bubbling** phase
+    - Promise
+        - Introduced in ES6
+        - Is a "promise" that a value will be "produced" in the future
+        - 3 states
+            - Pending
+            - Fulfilled: value is successfully produced
+            - Rejected: error value is produced
+        - A promise either moves from `pending to fulfilled` or `pending to rejected`
+        - Handling promises
+            - `.then((data) => {})` amd `.catch((err) => {})`
+                - Both accept a callback function with a defined parameter
+                - If promise succeeds, .then()'s callback function is executed and the value provided to that function
+                - If promise rejects, .catch()'s callback function is executed and the error value provided to that function  
+            - `async-await`
+                - `async function myAsyncFunc() {}`
+                    - Async function can utilize `await`
+                    - Async functions wrap their return value into a promise as well if needed to return something
+                - Await
+                    - Used to wait on a promise for its `fulfilled` value
+                    - ex. `let res = await fetch(...)` 
+                    - `let data = await res.json()`
+                    - Pauses the async function until promise that it is awaiting is fulfilled or rejected
+    - Fetch API
+        - Browser API to send HTTP requests
+        - Utilizes `fetch()` function
+
