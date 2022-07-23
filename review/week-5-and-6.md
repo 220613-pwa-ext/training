@@ -312,4 +312,140 @@
                 - Low severity, High priority
             - Admin is unable to add new employees to the reimbursement system
                 - Critical severity, low priority (because hiring freeze)
+
+# Week 6
+* User Story
+    - Features/functionality written from the perspective of an end user
+        - Format: `As a <user description>, I want <some functionality>, so that <benefit>`
+    - Acceptance criteria serve as the details of the user story and as part of the metrics used to determine if a user story is considered complete or not
+        - Format: `Given <precondition>, When <something occurs>, Then <result>`
+        - Can be utilized to design test scenarios and test cases
+* Behavior Driven Development (BDD)
+    - A superset of TDD that includes additional processes/tools to better facilitate development
+    - Features are described from the perspective of stakeholders
+    - Assumption: stakeholders lack technical knowledge
+    - BDD helps to bridge the gap between non-technical and technical team members and stakeholders
+    - Three Amigos
+        - Product owner/Business analysts
+            - What is the problem/feature we are solving/implementing?
+        - Developers
+            - How are we solving/implementing the problem/feature?
+        - Testers
+            - Are we solving/implementing the problem/feature correctly?
+    - BDD process
+        1. The "three amigos" get together and collaborate to document expected behaviors in plain "English-like" syntax (Gherkin)
+        2. Test Automation engineers write tests that validate the described behaviors
+        3. Developers implement the application with the objective of passing the test cases
+    - Behave
+        - A framework for Python in which 2 types of files exist:
+            - Feature files
+            - Step definition files
+        - Feature file
+            - `.feature` extension
+            - Uses Gherkin syntax
+            - Lists out various scenarios that belong to a feature
+            - Scenario: a concrete example of the behavior of the system
+                - Each scenario has a series of steps
+            - Steps
+                - Keywords
+                    - Given: specifies a precondition
+                    - When: specifies the occurrence of an event
+                    - Then: specifies the expected outcome after the event
+                    - And
+                    - But
+        - Step definition
+            - Contains methods that are linked to particular "steps"
+            - These methods contain actual automation code (such as Selenium related code) that will automate a particular set of actions
+    - Benefits of BDD
+        - Encourages development and maintenance of system documentation understandable to both technical and non-technical team members -> "living documentation"
+        - Emphasizes effective communication between all members of a team
+        - Aids in development AND testing of a system by providing a framework in which test driven development (TDD) can proceed
+* Selenium
+    - A set of different software that faciliates browser automation
+    - 3 tools
+        - Selenium WebDriver: a tool that enables the writing of automation scripts using various programming languages
+            - Python
+            - Java
+            - C#
+            - Ruby
+            - etc.
+        - Selenium IDE: a tool that enables "record-and-playback" of interactions with the browser to easily create scripts
+        - Selenium Grid: a tool that enables the distribution of automation scripts to many different machines from a central location
+    - **Focus is on Selenium WebDriver**
+    - Setting up and using Selenium WebDriver
+        1. Download the appropriate webdriver for a particular browser that is being used (ChromeDriver, GeckoDriver (firefox), SafariDriver, etc.) and place it into the project directory
+        2. Install the Selenium WebDriver API into the software project 
+            - Python: `pip install selenium`
+        3. Write code that will instantiate a WebDriver object
+            - Python: `driver = webdriver.Chrome('./chromedriver.exe')`
+        4. Use the .get method to go to a webpage
+            - `Python`: `driver.get('http://google.com')`
+        5. Locate elements using `driver.find_element(..., ...)` or `driver.find_elements(..., ...)`
+        6. Perform various actions on those elements
+    - Selenium Locators
+        - By.ID
+        - By.CLASS_NAME
+        - By.NAME
+        - By.TAG_NAME
+        - By.LINK_TEXT
+        - By.PARTIAL_LINK_TEXT
+        - By.XPATH
+        - By.CSS_SELECTOR
+    - XPath
+        - A set of syntax/rules that allows for traversal through nodes in a document
+        - Most powerful way to locate elements
+        - More flexible than CSS selectors
+        - HTML elements can be modelled as "nodes"
+        - Parent-child traversal is possible
+        - Two types of XPath
+            - Relative XPath
+                - `//`
+                - Allows for skipping to elements that match the condition
+                    - ex. `//*[@class='class-a']`
+            - Absolute XPath
+                - `/`
+                - Specifies traversal from parent to children
+                - `/html/body/div[1]/p`
+        - General rule of thumb: be as specific as possible when writing XPath to select elements
+        - XPath position
+            - Elements can be selected according to position
+            - Starts at 1 and goes up
+            - `[]` syntax
+            - `//div[2]`
+                - Select every second div within all parent elements
+        - XPath functions
+            - `last()`
+            - `text()`
+            - `contains()`
+            - `position()`
+            - `not()`
+            - etc.
+        - XPath operators
+            - `!=`
+            - `=`
+            - `<`
+            - `>`
+            - `<=`
+            - `>=`
+            - `and`
+            - `or`
+        - XPath attribute
+            - Refer to attributes using `@<attribute name>`
+            - ex. `@id`, `@class`, `@name`
+        - Axes
+            - Used to traverse from parent-child, etc.
+            - Powerful way to move up and down the levels in the tree of nodes
+                - `parent`
+                    - `//td[text()='Westview Middle']/parent::tr`
+                    - Selects the parent tr element of any td with the text "Westville Middle"
+                - `following-sibling`
+                - `following`
+                - `preceding`
+                - `preceding-sibling`
+                - `child`
+                - `ancestor`
+                - `descendant`
+
+
         
+
