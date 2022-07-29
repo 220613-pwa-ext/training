@@ -13,14 +13,14 @@ Project 2 is a group-based, full-stack application that you will be designing an
         - Trace requirements to test cases
     - Test summary report
     - Automation
-        - Should utilize BDD framework (Cucumber)
-            - Test cases should be translated to feature files
-            - Step definition files should contain Selenium code to interact with the webpage
         - Test automation should be performed in Java
             - Should be a separate project from the backend
             - Selenium WebDriver (Java)
             - Cucumber (BDD)
             - TestNG (test execution/assertion framework)
+        - Should utilize BDD framework (Cucumber)
+            - Test cases should be translated to feature files
+            - Step definition files should contain Selenium code to interact with the webpage
 - Backend
     - The backend will be a RESTful API
     - Can either be developed in Python OR Java
