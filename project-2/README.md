@@ -1,6 +1,26 @@
 # Project 2
 Project 2 is a group-based, full-stack application that you will be designing and implementing based on user stories of your own choosing.
 
+- Testing
+    - Test driven development
+    - Test Plan document
+    - Spreadsheet outlining
+        - Requirements (user story, multiple acceptance criteria for each user story)
+        - Test scenarios
+        - Test cases
+        - Defect reports
+    - Requirements traceability matrix
+        - Trace requirements to test cases
+    - Test summary report
+    - Automation
+        - Should utilize BDD framework (Cucumber)
+            - Test cases should be translated to feature files
+            - Step definition files should contain Selenium code to interact with the webpage
+        - Test automation should be performed in Java
+            - Should be a separate project from the backend
+            - Selenium WebDriver (Java)
+            - Cucumber (BDD)
+            - TestNG (test execution/assertion framework)
 - Backend
     - The backend will be a RESTful API
     - Can either be developed in Python OR Java
@@ -11,7 +31,7 @@ Project 2 is a group-based, full-stack application that you will be designing an
         * Java
             - Javalin
             - JDBC
-            - JUnit
+            - JUnit (for unit tests)
     - Unit tests
         - Have minimum service layer coverage of 80%
         - Utilize mocking as necessary
