@@ -1,0 +1,500 @@
+# Week 7 Review
+
+# Java
+* Introduction to Java
+    - Compiled language
+    - Static typing
+    - Object oriented programming language
+    - Automatic memory management
+        - Garbage collection
+    - We require a "main" method that will be the entry-point for the execution of the program
+    - High-level programming language
+    - Platform independence (Write once, run anywhere)
+        - You can write Java code on a Windows machine and have it run on a Mac
+* JDK, JRE, JVM
+    - JDK (Java Development Kit)
+        - What developers need to install
+        - The most important thing that the JDK has is the **compiler**
+        - Compiler + Debugging tools + `JRE`
+    - JRE (Java Runtime Environment)
+        - What users need to install
+        - Runtime library
+            - All of the built-in classes/interfaces are here
+            - String class
+            - Wrapper classes
+            - Collections API
+            - JDBC
+            - Object class
+            - Math class
+            - System class
+                - `System.out.println("Hello world")`
+            - etc.
+        - Runtime library + JVM
+    - JVM (Java Virtual Machine)
+        - Takes compiled instructions (bytecode) and runs them
+            - Whatever the JVM runs is already compiled
+            - Compiled instructions = bytecode
+        - Every OS has a different JVM implementation
+            - But, they can all understand the same bytecode instructions
+* Datatypes
+    - Object types
+        - Established by classes and interfaces
+        - If you have created a class or interface, you have created a new type
+            - Even though you can't instantiate an interface or abstract class, you still create a new type
+                - abstract class Animal {}
+                - class Dog extends Animal {}
+                - `Animal a = new Dog();`
+    - Primitive types
+        - 8 primitives
+        - byte (8 bits)
+            - -128 to 127
+        - short (16 bits)
+            - -32768 to 32767
+        - char (16 bits)
+            - 0 to 65535
+            - Used to represent characters
+        - int (32 bits)
+            - -2,147,483,648 to 2,147,483,647
+            - default integral number
+        - long (64 bits)
+            - -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+            - Requires an `L` or `l` at the end of the number
+        - float (32 bits)
+            - +- 3.4 * 10^38 (7 digits precision)
+            - Requires an `F` or `f` at the end of the number
+        - double (64 bits)
+            - +- 1.7 * 10^308 (15 digits precision)
+            - default floating-point number
+        - boolean (1 bit)
+    - A bit is a single "digit" for binary numbers (base 2)
+* Variable types
+    - 2 primary types of variables
+        - Primitive variables
+            - Stores the value itself
+        - Reference variables
+            - Store the memory address (location) of the object
+            - They do not store the object itself
+            - Objects are always stored in the **heap**
+* Variable scopes
+    - Where the variable actually exists
+        - This also informs where we can access a variable from
+    - Class/global scope (static fields)
+    - Instance scope (non-static fields)
+    - Method scope (variables declared within a method, but outside of a block)
+    - Block scope (blocks of code within the method, ex. for loops, while loops, if, else if, else, etc.)
+* Packages and Imports
+    - Package: a way to organize classes into a group
+        - Allow allows us to distinguish classes that have the same name
+        - 2 classes may have the same name, but be in different packages
+        - It's up to us which class to use based on an import statement
+    - Import: a way to utilize a class inside of the current class from a different package
+        - If you are using a class inside of the same package, then you don't need to import it
+        - `import <fully qualified class name>`
+            - ex. `import com.revature.model.User`
+    - Importing is technically optional (you can utilize the fully qualified class name instead)
+        - `com.revature.model.User myReferenceVariable = new com.revature.model.User(1, "bachy21", "pass123", "email@email.com")`
+* Main method
+    - The method where our program will start execution
+    - Always required in the application
+    - `public static void main(String[] args)`
+        - String[] args: if we start the program from the command line, then String[] args is an array that will represent each command-line argument as an element
+* Automatic memory management
+    - Garbage collection
+        - Objects are garbage collected when there is no more reference to that object
+        - Essentially, the object is considered "unreachable"
+        - This will free up memory that was previously occupied by the object
+    - Forcing garbage collection
+        - Not possible to force garbage collection
+            - The programmer does not have direct control over garbage collection
+        - But, we can suggest to the garbage collector to run
+            - `System.gc()`
+* Classes and Objects
+    - Class v. Object
+        - Class: blueprint for creating objects
+        - Object: an instance of the class
+            - We can have multiple instances of a class (multiple objects)
+        - Construction analogy
+            - A blueprint is NOT the actual building(s)
+            - Once we construct a building based on the blueprint, it is an actual instance (object)
+    - Class
+        - Field
+            - Variables declared at the class-level (class "lexical" scope)
+        - Defines properties and behaviors of the object
+            - Properties
+                - Non-static fields
+            - Behaviors
+                - Non-static methods
+        - Static fields and static methods
+            - Related to the class itself
+            - Static field: property of the blueprint
+            - Static method: behavior of the blueprint
+    - Object
+        - Instantiate from concrete class (not abstract class)
+        - new keyword + constructor
+            - `new Dog("Fido", 5)`
+            - new indicates that we are creating a new object
+            - Dog("Fido", 5) is a constructor that we are invoking and passing "Fido" and 5 as arguments
+* Constructors
+    - Subroutine that is used to create objects and is particularly commonly used to set initial values for the object's properties
+    - Default no-args constructor
+        - Provided if and only if we don't define any constructor explicitly inside our class
+    - Types of constructors
+        - No-args constructor
+        - Parameterized constructor
+            - Takes in all parameters in order to set the properties of the object at the time of instantiation
+        - Copy constructor
+            - Take an object as a parameter
+            - Extract properties from that object and use them as properties for the new object
+            - In essence, creating a copy of the object
+            - `public Dog(Dog d) { this.name = d.name; this.age = d.age; }`
+    - Constructor signature
+        - Same name as the class
+        - No return type
+        - `<access modifier> Dog(<parameters>) {}`
+* Method
+    - A function that exists in a class
+        - In Java, every function needs to be in a class, therefore ALL functions are methods in Java
+        - A block of code that can be re-used
+    - Input -> Output
+        - Input: arguments / parameters
+        - Output: return value
+            - use return keyword
+    - Method signature
+        - `<access modifier> <non-access modifier?> <return type> methodName(<parameters?>) { }`
+        - access modifier (required)
+        - non-access modifier (optional)
+        - return type (required)
+            - `void` means no return type
+        - parameters (optional)
+* Access modifiers
+    - Primarily used for fields and methods
+    - public
+        - Accessible from anywhere
+    - protected
+        - Same package + subclasses anywhere
+    - default
+        - Lack of a keyword
+        - Same package
+    - private
+        - Same class only
+* Non-access modifiers
+    - static keyword (most important non-access modifier)
+        - Variables
+            - static variable: belongs to the blueprint
+                - static/global scoped
+                - Does not mean that the variable's value cannot be changed
+                - `<class name>.<static variable name>`
+        - Methods
+            - static method: belongs to the blueprint
+                - `<class name>.<static method>()`
+                - Can access static variables directly
+                - Cannot access instance variables or instance methods directly
+                    - Must be accessed through a reference variable
+    - final keyword
+        - Use with variables, methods, and classes
+            - final variable: Value cannot be changed (constant)
+            - final method: cannot be overridden
+            - final class: cannot be extended
+    - abstract keyword
+        - abstract class
+        - abstract method
+    - synchronized keyword
+        - Used with multi-threading to avoid "race conditions"
+        - Makes sure that only 1 thread can access the synchronized block of code at a time
+    - volatile
+        - Ensures that a variable is accessible only from RAM and not from the CPU cache
+    - transient
+        - When serializing an object using Java's old object serialization functionality, ensures that a variable is skipped
+        - Serialization (obsolete)
+* Arrays
+    - Properties of arrays
+        - Contiguous memory
+        - Fixed size
+        - Same datatype
+        - Indexed (starting at 0)
+        - Arrays are objects (stored in the heap)
+    - Creating an array (instantiating an array)
+        - Syntax
+            - `int[] myReferenceVariable = new int[23];`
+                - 23 0's
+            - `int[] myReferenceVariable = new int[] { 23, 21, 12, -100, 5, 1000, 232 }`
+                - Array of size 7 with pre-populated values
+            - `int[] myReferenceVariable = { 23, 21, 12, -100, 5, 1000, 232 }`
+                - Array of size 7 with pre-populated values
+    - Default values if we're creating an array without pre-populated values
+        - 0 (byte, short, char, int, long)
+        - 0.0 (float + double)
+        - false (boolean)
+        - null (reference variable)
+* Control flow
+    - if, else if, else
+    - for
+        - `for (int i = 0; i <= 100; i++) { }`
+        - `for (<initializing segment>; <conditional segment>; <decrementing/incrementing segment>) { }`
+    - for-each
+        - Used with Arrays OR Iterables (Iterable interface)
+        - `for (int i : myIntArray) { }`
+        - `for (Animal a : myAnimals) { }`
+    - while
+        - `while (i < 100) { }`
+        - `while (<condition>) { }`
+    - do-while
+        - Guaranteed to run at least once since the condition is checked at the end
+        - `do { } while (<condition>);`
+    - switch
+        - `switch(<variable>) { case 1: // code break; case 1000: // code break; }`
+        - A particular case will be executed when the variable matches the value of that case
+        - Variables
+            - byte
+            - short
+            - char
+            - int
+            - String
+* Var-args
+    - Variable arguments
+    - Special parameter that can be defined for a method
+    - Allows us to have as many arguments (indefinite) as we want
+    - `public void myMethod(String... myStrings)`
+        - Invoke: `myMethod("hello", "there", "testing", "123")`
+        - All arguments passed in for the var-args parameter will be treated as elements in an array
+        - myStrings is a String array
+* Pillars of OOP
+    - A PIE acronym
+    - Abstraction
+        - Representing an abstract idea
+            - Establishes abstract datatypes
+        - Utilize abstract classes and interfaces to create abstract datatypes
+        - Abstract class
+            - Cannot be instantiated
+            - Can contain BOTH concrete and abstract methods
+                - In fact, an abstract class may not have any abstract methods and only concrete methods
+            - Can contain a constructor (even though it can't be instantiated)
+        - Interface
+            - Cannot be instantiated
+            - Can only have abstract methods (with the exception of default methods)
+            - Default method
+                - A concrete method that exists in an interface
+                - default keyword
+                    - Used on a method to allow for that method to have a concrete implementation
+                    - Added in Java 8
+            - CANNOT contain a constructor
+            - Variables in an interface are `public final` implicitly
+            - Methods in an interface are `public abstract` implicitly
+            - Can have static methods
+                - `public static`
+    - Polymorphism
+        - Many forms
+        - Methods having many different implementations through overriding and overloading
+        - Overriding is "true polymorphism" (known as runtime polymorphism)
+            - A child class implements different code for a method already defined in the parent class
+            - Requires that methods have
+                - The same name
+                - The same access modifier (or more accessible)
+                - The same return type (or a covariant return type)
+                - The same parameters
+        - Overloading is "fake polymorphism" (known as compile-time polymorphism)
+            - Two or more methods in the same class
+            - Requires that methods have
+                - The same name and different number and/or type of parameters
+                - That's it
+            - Once our code is compiled into byte-code, method names don't matter
+            - The JVM when it runs our program does not see methods as having names, it instead sees different execution paths that were established when the compiler compiled the source code
+            - Therefore, the fact that overloading has to do with the same method name doesn't really matter that much
+            - The methods defined for method overloading are essentially completely unrelated methods that only have the same name
+    - Inheritance
+        - Where a child class inherits the properties and behaviors defined in the parent class
+            - Child class (subclass)
+            - Parent class (superclass)
+        - Not all properties and behaviors will be inherited
+            - Access modifiers
+                - `protected` will always be inherited
+                - `public` will always be inherited
+                - `default` (child must be in the same package as parent to be inherited)
+                - `private` (not inherited ever)
+        - The constructors in the child class will either explicitly by the developer or implicitly by the compiler possess the `super()` invocation as the first line
+            - `super()` is used to invoke the parent class' constructor
+            - Any arguments passed into `super()` will invoke the particular overloaded constructor in the parent
+    - Encapsulation
+        - Wrapping variables and methods into a single unit
+        - We limit direct access to the variables so that other developers cannot do things that weren't intended by the creator of that class
+            - This is the main purpose of access modifiers (not about security)
+            - Can make use of `private`, `default`, `protected`
+        - If you do want access to those variables (set the value or to retrieve the value)
+            - Define getters
+                - Instance methods that will return the value of the instance variable
+            - Define setters
+                - Instance method that will set the value of the instance variable
+        - Summary: limit access using more restrictive access modifiers and utilize getters/setters
+* Object class
+    - Either directly or indirectly the parent class of every class
+        - Directly: the class directly extends Object
+            - `public class Dog { }` 
+        - Indirectly: the class has a parent or grandparent, etc. that directly extends Object
+            - `public class Dog extends Animal { }`
+                - Dog IS-An Animal
+                - Dog IS-An Object
+                - Animal IS-An Object
+    - Methods inherited from Object class
+        - `toString()`
+            - default behavior if we don't override
+                - returns a String containing the following format: `<fully qualified classname>@<hashCode>`
+            - We normally override toString to return a String that contains the properties and the values of the properties
+                - `Dog [name = Fido, age = 10]`
+        - `equals()`
+            - default behavior if we don't override
+                - compares the memory address (same as `==`)
+            - Normally overridden to compare the values contained within two objects to see if all are the same
+                - `d1.equals(d2)`
+                - d1 is a Dog object
+                - d2 is another Dog object
+                - .equals was overridden to compare the name and age to see if they're the same
+        - `hashCode()`
+            - Performing a hashing function
+                - Hash function: a process where an infinite number of inputs can result in the same output
+                    - Ex. Basic hash function `f(x) = x % 2`
+                    - inputs: 2, 4, 6, 8, 10, 12, ..., Infinity all have the same output of 0
+                    - inputs: 1, 3, 5, 7, 9, 11, ...,  Infinity all have the same output of 1
+            - Utilized especially when dealing with datastructures such as HashMap and HashSet
+                - Enables these datastructures to have a time complexity of O(1)
+            - default behavior is we don't override
+                - Taking the memory address and running it through a hash function
+            - If we do override
+                - Takes all of the values of the properties of the object and runs it through a hash function
+        - Note: equals and hashCode must be overridden together based on comparison and hashing of the same properties in order to consistently provide the same behavior within the hash dependent datastructures (such as HashMap and HashSet)
+* Collections API
+    - Collections hierarchy
+        - Iterable interface
+            - Collection interface (extends Iterable)
+                - List interface (extends Collection)
+                    - ArrayList class (implements List)
+                    - LinkedList class (implements List)
+                - Queue interface (extends Collection)
+                    - LinkedList class (implements Queue)
+                    - PriorityQueue class (implements Queue)
+                - Set interface (extends Collection)
+                    - HashSet class (implements Set)
+        - Map interface (separate hierarchy)
+            - HashMap (implements Map)
+            - HashTable (implements Map)
+            - HashMap v. HashTable
+                - HashMap is not thread-safe
+                - HashTable IS thread-safe
+                - HashMap allows a null key and null value
+                - HashTable DOES NOT allow null keys or null values
+    - List interface abstract methods
+        - `.add(E element)`
+        - `.add(int index, E element)`
+        - `.size()`
+        - `.set(int index, E element)`
+        - `.remove(int index)`
+        - `.remove(E element)`
+        - `.clear()`
+    - Queue interface abstract methods
+        - `.add(E element)`
+        - `.offer(E element)`
+            - add throws an exception if capacity runs out
+            - offer returns false if capacity runs out
+        - `.element()`
+        - `.peek()`
+            - element throws an exception if queue is empty
+            - peek returns null if queue is empty
+        - `.remove()`
+        - `.poll()`
+            - remove throws an exception if queue is empty
+            - poll returns null if queue is empty
+        - `.size()`
+    - Set interface abstract methods
+        - `.contains(E element)`
+            - O(1)
+        - `.add(E element)`
+        - `.clear()`
+        - `.isEmpty()`
+        - `.remove(E element)`
+        - `.size()`
+* Generics
+    - A way to parameterize types
+        - For example, if we create a List, we may pass in an argument of the type `Animal` in order to store Animal objects in the list
+        - ex. `List<Animal> myAnimals = new ArrayList<>();`
+    - `<>` operator
+        - This is where you pass in types as arguments
+    - Creating a class that accepts generics
+        - `public class MyArrayList<E> { }`
+            - E is a parameter for our types
+            - E can be used as a return type, types for parameters of methods, and variable types in the class
+    - Commonly used with the Collections API
+        - But can be used for other things as well
+    - Only object types can be used (no primitives)
+* Wrapper classes
+    - A class that serves as a blueprint for objects that "wrap" around primitive values
+    - Integer, Double, Character, Byte, Short, Float, Boolean, Long
+    - These classes also contain useful static methods that can be utilized for converting Strings into primitives, etc.
+        - Integer.parseInt(String s)
+        - Double.parseDouble(String s)
+        - etc.
+    - Autoboxing and unboxing
+        - Autoboxing: automatic conversion from primitive to object
+        - Unboxing: automatic conversion from object to primitive
+* Exceptions
+    - Note: Even though we have the Exception class and RuntimeException class, ALL exceptions happen at Runtime
+    - Throwable Hierarchy
+        - Throwable class
+            - Error class (extends Throwable)
+            - Exception class (extends Throwable)
+                - IOException class (extends Exception)
+                - SQLException class (extends Exception)
+                - other checked exceptions
+                - RuntimeException class (extends Exception)
+                    - ArithmeticException class (extends RuntimeException)
+                    - ClassCastException class (extends RuntimeException)
+                    - ArrayIndexOutOfBoundsException class (extends RuntimeException)
+                    - other unchecked exceptions
+    - Error v. Exception
+        - Error: a fatal issue with the application that is not recoverable
+            - Errors can be caught and handled, but really should not be in practice
+        - Exception: some issue that occurs during the runtime of the application that is able to be recovered from
+            - Normal part of the functioning of an application
+            - Ex. exceptions may be thrown and handled when validating user input
+    - Interrupt the flow of the program
+        - Exceptions propagate from the method that threw the exception to the method that called that method, and so on
+            - Propagate down the call stack
+            - Propagation stops whenever a method actually catches the exception
+    - Handling v. Declaring an exception
+        - Handling
+            - Utilize try - catch - finally
+            - try block
+                - Contains the code that may throw an exception
+            - catch block
+                - Contains code that will execute when the exception occurs
+                - Multiple catch blocks are allowed
+                - You can also specify multiple exceptions for a single catch block
+            - finally block (optional)
+                - Contains code that is guaranteed to run whether an exception occurs or not
+        - Declaring
+            - Use `throws` in the method signature
+            - Indicates that we do not want to handle the checked exception in the current method, but rather the method that calls this method
+            - "Ducking the exception": passing responsibility to the calling method
+    - Two types of exceptions
+        - Checked exceptions
+            - An exception whose ancestor is the Exception class but does not have RuntimeException as an ancestor (or is the Exception class itself)
+            - If not handled or declared, will result in a compilation error
+        - Unchecked exceptions
+            - An exception whose ancestor is the RuntimeException class (or is the RuntimeException class itself)
+            - Not required to handle or declare, but is recommended to handle
+    - Throw v. Throws?
+        - throw: keyword used to start propagation of an exception
+            - When throw is used, the flow of the application is immediately interrupted until we reach the appropriate catch block, whereby execution will continue from that point
+        - throws: used to declare an exception ("duck the exception", pass the responsiblity to the calling method)
+* Functional interfaces
+    - An interface with only 1 abstract method
+    - Anonymous class: a class that does not have a name that allows for us to immediately implement abstract methods declared in an interface while we are instantiating an object of the type of that interface
+        - `MyInterface obj = new MyInterface() { @Override public void myMethod1() { } @Override public void myMethod2() { } }`
+            - This anonymous class `{ @Override public void myMethod1() { } @Override public void myMethod2() { } }` is implementing 2 abstract methods while instantiating the object 
+    - Lambda expression: a special type of anonymous class
+        - `() -> { }`
+        - Implementing the single abstract method declared inside a functional interface
+        - interface MyFunctionalInterface { String myMethod(String s); }
+        - MyFunctionalInterface obj = `(s) -> { return s + "!!!"; }`
+    - Lambdas are a way to introduce functional programming into Java
+        - The issue with Java is that functions are NOT first-class citizens
+            - This means functions cannot be passed as arguments or returned from other functions or assigned to variables
+        - Lambdas allow us to simulate passing around a function (but it's actually an object where a single method has been implemented)
