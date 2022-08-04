@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="My Test Suite">
+    <test name="My Regression Tests">
+        <classes>
+            <class name="com.revature.runner.TestRunner"></class>
+        </classes>
+    </test>
+</suite>
