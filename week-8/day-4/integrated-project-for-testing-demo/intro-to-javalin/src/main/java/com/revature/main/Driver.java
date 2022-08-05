@@ -17,7 +17,9 @@ import java.util.List;
 public class Driver {
 
     public static void main(String[] args) {
-        Javalin app = Javalin.create();
+        Javalin app = Javalin.create(config -> {
+            config.enableCorsForAllOrigins();
+        });
 
         // Controller is an abstract datatype (interface)
         // Controller defines an abstract method "mapEndpoints"
