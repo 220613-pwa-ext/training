@@ -10,10 +10,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-// Page Object Model: A design pattern where we identify all elements for a particular page and centralize those elements
-// into a blueprint that represents the page
-// In our test cases, we can then reference the elements from the LoginPage object
 public class LoginPage {
+
+    // HAS-A relationship
+    // properties of the object
+    // A LoginPage object HAS-A WebDriver object
+    // A LoginPage object HAS-A WebDriverWait object
+
+    // A Car object HAS-A Engine object
+    // A Car object HAS-A Transmission object
 
     private WebDriver driver;
     private WebDriverWait wdw;
@@ -21,14 +26,14 @@ public class LoginPage {
     @FindBy(id="username")
     private WebElement usernameInput;
 
-    @FindBy(xpath="//input[@id='password']")
+    @FindBy(css="input[id='password']")
     private WebElement passwordInput;
 
-    @FindBy(css="button[id='login-btn']")
+    @FindBy(xpath="//button[@id='login-btn']")
     private WebElement loginButton;
 
     @FindBy(xpath="//div[@id='error-message']/p")
-    private WebElement loginErrorMessageParagraph;
+    private WebElement errorMessageParagraph;
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -48,26 +53,11 @@ public class LoginPage {
         loginButton.click();
     }
 
-    public String getErrorMessage() {
-        // We need to do an explicit wait here so that by the time we try to grab the text from the paragraph element,
-        // it already exists
+    public String getErrorMessageText() {
+        // This element only appears after some time once we have clicked the login button if we entered invalid credentials
+        // It is not immediately available on the page, so we need to wait for it
         wdw.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@id='error-message']/p")));
-        return loginErrorMessageParagraph.getText();
+        return errorMessageParagraph.getText();
     }
-
-    /*
-        Approach without PageFactory
-     */
-//    public WebElement getUsernameInput() {
-//        return driver.findElement(By.id("username"));
-//    }
-//
-//    public WebElement getPasswordInput() {
-//        return driver.findElement(By.id("password"));
-//    }
-//
-//    public WebElement getLoginButton() {
-//        return driver.findElement(By.id("login-btn"));
-//    }
 
 }

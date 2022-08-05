@@ -12,6 +12,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -66,7 +67,21 @@ public class LoginTests {
         // Step 0 (Automation setup): Setup WebDriver
         WebDriverManager.chromedriver().setup(); // go and download chromedriver.exe (windows) or chromedriver (mac)
 
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--incognito");
+        options.addArguments("--headless"); // Where we don't have a GUI for the chrome browser (so that we can execute tests on a headless
+        // machine, such as a server in the cloud)
+
+        driver = new ChromeDriver(options);
+
+        // Implicit wait
+        // An implicit wait is "global" for every single element that we are trying to find
+        // It is configured for the entire WebDriver object
+        // We don't specifically wait for a particular element, it will instead apply to all elements that don't appear immediately
+        // An implicit wait will poll the browser every 500 ms until the element is found. There is a maximum amount of time specified
+        // (ex. 10 seconds) in which an exception will be thrown if the element is not yet found
+
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
     @AfterMethod // Commonly used to "clean up" resources after each test case
@@ -113,13 +128,13 @@ public class LoginTests {
         LoginPage loginPage = new LoginPage(driver);
 
         // Step 2. Enter valid username
-        loginPage.getUsernameInput().sendKeys(username);
+        loginPage.typeUsername(username);
 
         // Step 3. Enter valid password
-        loginPage.getPasswordInput().sendKeys(password);
+        loginPage.typePassword(password);
 
         // Step 4. Click on login button
-        loginPage.getLoginButton().click();
+        loginPage.clickLoginButton();
 
         // Assert actual == expected
         WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(10)); // if what we are waiting for does not appear within 10 seconds, automatically fail
@@ -135,6 +150,18 @@ public class LoginTests {
         Assert.assertEquals(driver.getTitle(), "Success!");
         Assert.assertEquals(driver.getCurrentUrl(), "http://127.0.0.1:5500/success.html");
         Assert.assertTrue(successPage.getMainHeading().isDisplayed());
+    }
+
+    @Test
+    public void invalidLogin() {
+        driver.get("http://127.0.0.1:5500");
+        LoginPage loginPage = new LoginPage(driver);
+
+        loginPage.typeUsername("asdfsdfds");
+        loginPage.typePassword("sdf123");
+        loginPage.clickLoginButton();
+
+        Assert.assertEquals(loginPage.getErrorMessage(), "Username and/or password is incorrect");
     }
 
 }
