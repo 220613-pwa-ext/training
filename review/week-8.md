@@ -1,0 +1,115 @@
+# Week 8 Review
+
+* Design patterns
+    - Object oriented design patterns
+        - Singleton design pattern
+            - All about ensuring that there is only a single instance within the application
+            - Implement the design pattern
+                - have a private constructor
+                - have a public static field that references an instance of the class
+                - public method that checks if the instance already exists for that static field, and if not, instantiates the object for the first time
+        - Factory design pattern
+            - A design pattern that helps us create specific examples of a parent type
+            - Ex. PetFactory
+            - We may have an abstract class or interface called Pet
+            - PetFactory will help us create specific versions of Pet, such as Dog, Cat, etc.
+    - Test automation design pattern(s)
+        - Page object model design pattern
+            - Is a way to organize WebElements into a single class that represents the page
+            - From there, we can define methods such as `typeUsername` or `typePassword` that will actually interact with the page
+                - PageFactory is an extension to the page object model provided by Selenium that allows us to utilize the `@FindBy` annotation instead to represent WebElements
+                    - PageFactory.initElements(driver, this);
+* Maven
+    - pom.xml
+        - Project object model (not the same as page object model)
+        - Configuration for a Maven project (Java project managed by Maven)
+    - Build tool
+        - Build lifecycle
+            - Phases you should really know about
+                - Validate phase
+                    - Validates the project configuration and checks to see if we have all dependencies
+                - Compile phase
+                    - Where our source code is compiled into bytecode
+                - Test phase
+                    - Where test cases are executed
+                - Package phase
+                    - Where our project is packaged into a .jar file (or .war file)
+                - Other ones as well, but not really that important for us to know about from a practical standpoint
+    - Dependency manager
+        - `<dependencies></dependencies>`
+            - Where we list all of the external libraries that our project requires
+            - Maven can go download those dependencies by referring to this section of the pom.xml file
+* TestNG
+    - A testing framework that can be used for unit testing, integration testing, and E2E testing
+    - We specifically are utilizing TestNG for E2E testing
+        - We need to utilize Selenium alongside TestNG to do so
+        - Selenium is what actually automates the browser
+    - TestNG provides the actual ability to create "test cases"
+        - When we execute the test cases, it's able to report the number that failed and the number that passed
+        - TestNG provides assertions (things that we check for that need to be true in order for the test case to pass)
+            - Assertions are a way of programmatically checking whether actual == expected
+    - XML configuration
+        - `testng.xml` file (default file that you would be creating)
+        - Each .xml file describes a single "test suite"
+            - A test suite is a collection of tests
+        - Inside of the configuration file is where we specify the structure of our test suite along with what test cases should be included as part of the test suite
+        - We can then tell Maven or our IDE to execute the .xml file and run the tests listed in the .xml file
+    - Test organization (top to bottom)
+        - Suite: an entire collection of test cases
+            - Test: a category of tests (ex. regression tests, smoke tests OR ex2. mobile tests, pc tests, etc.)
+                - Class: a class that contains test case methods
+                    - Group: a grouping of test methods within a test class
+                        - Method: the actual test case itself
+        - Hierarchy can be established within XML configuration
+        - You can also specify "groups" using the groups attribute within the @Test annotation
+    - Annotations
+        - @BeforeSuite
+        - @AfterSuite
+        - @BeforeTest (test categories)
+        - @AfterTest (test categories)
+        - @BeforeClass
+        - @AfterClass
+        - @BeforeMethod (test cases)
+        - @AfterMethod  (test cases)
+    - Test dependencies (attributes within @Test annotation)
+        - dependsOnMethods
+            - We can specify which methods a particular test case method depends on
+            - This means the methods listed should run before the current test case method
+        - dependsOnGroups
+            - We can specify which test groups a particualr test case method depends on
+            - This means all methods within the listed groups should run before the current test case method
+    - @DataProvider
+        - A method annotated with @DataProvider that will provide a 2D array containing test data
+        - For example, if you want to test login functionality, you may utilize a data provider to supply rows of usernames and passwords
+        - The DataProvider method may utilize external libraries such as Apache POI (or anything of your choosing) to read excel files for example and extract data from those excel files
+        - Can be used to establish "data driven testing"
+    - priority
+        - attribute within @Test annotation
+        - can be used to set the priority of test methods
+        - The lower the number, the higher the priority
+            - ex. -100 has a higher priority than 1
+        - Can have negative numbers + positive numbers
+* Data-driven testing
+    - Where test cases are driven by external data
+    - Ex. Valid login test scenario
+        - if we provide 100 logins, we have 100 test cases
+* Cucumber
+    - BDD framework
+        - Used to allow us to perform Behavior Driven Development
+    - Files
+        - Feature files
+            - Gherkin
+                - Syntax for our feature file
+            - Keywords
+                - Given
+                - When
+                - Then
+            - Contains many scenarios for a particular feature
+                - "Test scenarios"
+        - Step definition files
+            - Contain the actual automation test scripts
+            - Typically we will write Selenium code within the step definition files that will perform the actual automation
+            - We will also write TestNG assertions within the "Then" step definitions to assert expected v. actual conditions
+        - TestRunner class
+            - Links the feature files with the step definition files
+            - Integrates with TestNG (to provide test reporting and to treat scenarios in the feature files as actual test cases)
