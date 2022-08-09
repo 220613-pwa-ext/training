@@ -185,3 +185,16 @@
             - Browser is polled every 500ms until the specific condition occurs or the maximum time is reached
             - Is typically preferred over implicit wait since it is clear to any other programmer reading the code what Selenium is waiting for
             - Uses a `WebDriverWait` object and an `ExpectedCondition` as mentioned previously
+    - Page Object Model
+        - A way to represent a page through a single class
+        - Essentially, it's a way of encapuslating WebElements on a webpage into a single unit
+        - Benefits
+            - Less redundancy: Less code duplication
+            - Easier maintenance: If the WebElement locators must be updated due to changes made by frontend devs, then the locators can be easily updated in one location. Especially useful if many test cases use the same WebElements
+            - Easier readability: Other automation testers can easily go to the page object class and see what interactions are being made / what web elements are being used
+    - PageFactory
+        - An extension upon the page object model
+        - `PageFactory.initElements(driver, this)`
+        - Used in order to allow for WebElement fields to be populated via `@FindBy(<locator>="...")` syntax
+* 
+        
