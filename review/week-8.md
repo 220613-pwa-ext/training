@@ -48,6 +48,15 @@
         - When we execute the test cases, it's able to report the number that failed and the number that passed
         - TestNG provides assertions (things that we check for that need to be true in order for the test case to pass)
             - Assertions are a way of programmatically checking whether actual == expected
+            - Assert class provides assertions
+                - `assertEquals`
+                - `assertNotEquals`
+                - `assertTrue`
+                - `assertFalse`
+                - `assertSame`
+                - `assertNotSame`
+                - `assertNull`
+                - `fail`
     - XML configuration
         - `testng.xml` file (default file that you would be creating)
         - Each .xml file describes a single "test suite"
@@ -93,6 +102,9 @@
     - Where test cases are driven by external data
     - Ex. Valid login test scenario
         - if we provide 100 logins, we have 100 test cases
+    - Accomplished via
+        - TestNG: DataProviders
+        - Cucumber: parameterization using "inline parameters" or "scenario outlines"
 * Cucumber
     - BDD framework
         - Used to allow us to perform Behavior Driven Development
@@ -113,3 +125,63 @@
         - TestRunner class
             - Links the feature files with the step definition files
             - Integrates with TestNG (to provide test reporting and to treat scenarios in the feature files as actual test cases)
+    - Parameterization
+        - How we can achieve data-driven testing w/ Cucumber
+        - Inline parameters
+            - Arguments for scenarios are passed "inline"
+            - Utilized when we define individual scenarios instead of a "scenario outline"
+        - Scenario outline
+            - Data is passed in via "example" tables within a feature file
+            - Each row in the table corresponds to a single scenario
+            - Scenario outlines are used when each scenario uses the same steps but we need varying data
+* Selenium
+    - A way to automate actions in a web browser
+    - Webpages are made up of HTML elements
+    - Selenium can be used to locate elements and interact with them
+    - Often utilized alongside testing frameworks such as TestNG in order to create automated E2E test cases
+    - Interfaces + Classes
+        - WebDriver (interface): WebDriver objects represent control of the web browser
+            - Key methods:
+                - `.get(String url)`: go to a particular webpage
+                - `.findElement(By locator)`: Used to find the first occurrence of a WebElement that matches a locator
+                - `.findElements(By locator)`: Used to find all elements that match a locator `(List<WebElement>)`
+        - ChromeOptions class
+            - Allows for the configuration of the Chrome web browser that is being started up
+                - `ChromeOptions options = new ChromeOptions()`
+                - `options.addArgument("--incognito")`
+                - `options.addArgument("--headless")`
+                - `WebDriver driver = new ChromeDriver(options)`
+        - WebElement (interface): A WebElement object represents a particular element on the page. All interesting interactions with the page typically happen through methods of the WebElement object
+            - Key methods:
+                - `.click()`: click on the element
+                - `.sendKeys(CharSequence keysToSend)`: Type into an element
+                - `.getText()`: returns text of the element
+                - `.isDisplayed()`: boolean representing whether an element is displayed or not
+                - `.getAttribute(String attributeName)`: get value of an HTML attribute for the element
+        - WebDriverWait (class): A WebDriverWait object provides the ability to wait explicitly for a particular condition to occur, up to a maximum amount of time
+            - Polls the browser every 500ms until the condition occurs, or throws an exception if the maximum specified time is reached
+            - `WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(10))`
+            - `wdw.until(ExpectedCondition condition)`
+        - ExpectedConditions
+            - Provides conditions that we can explicitly wait for, such as
+                - `ExpectedConditions.alertIsPresent()`
+                - `ExpectedConditions.attributeContains(By locator, String attribute, String value)`
+                - `ExpectedConditions.elementToBeClickable(By locator)`
+                - `ExpectedConditions.presenceOfElementLocated(By locator)`
+                - `ExpectedConditions.textToBe(By locator, String value)`
+                - `ExpectedConditions.titleContains(String fraction)`
+                - `ExpectedConditions.titleIs(String title)`
+                - `ExpectedConditions.urlContains(String fraction)`
+                - `ExpectedConditions.urlToBe(String url)`
+                - `ExpectedConditions.visibilityOfElementLocated(By locator)`
+    - Waits
+        - Implicit wait
+            - Is a global configuration on the WebDriver object
+            - It is not clear what Selenium specifically must wait for, as it will wait for any element that is not yet available
+            - Is a "black box" unlike explicit waits (which are transparent in terms of what is being waited upon)
+            - `driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10))`
+        - Explicit wait
+            - A specific condition is specified by the programmer that Selenium must wait for
+            - Browser is polled every 500ms until the specific condition occurs or the maximum time is reached
+            - Is typically preferred over implicit wait since it is clear to any other programmer reading the code what Selenium is waiting for
+            - Uses a `WebDriverWait` object and an `ExpectedCondition` as mentioned previously
