@@ -6,7 +6,7 @@
             - All about ensuring that there is only a single instance within the application
             - Implement the design pattern
                 - have a private constructor
-                - have a public static field that references an instance of the class
+                - have a private static field that references an instance of the class
                 - public method that checks if the instance already exists for that static field, and if not, instantiates the object for the first time
         - Factory design pattern
             - A design pattern that helps us create specific examples of a parent type
