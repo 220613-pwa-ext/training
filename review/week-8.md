@@ -196,5 +196,29 @@
         - An extension upon the page object model
         - `PageFactory.initElements(driver, this)`
         - Used in order to allow for WebElement fields to be populated via `@FindBy(<locator>="...")` syntax
-* 
+* JDBC (Java Database Connectivity)
+    - An API to connect to a relational database and interact with the database
+        - Requires a database specific driver to communicate (ex. Postgres driver)
+    - Utilized within the DAO layer in order to programmatically perform CRUD operations
+    - Classes and interfaces
+        - DriverManager class: used to register a Driver object and obtain a `Connection` object
+        - Connection interface: represents a connection with the database
+        - Statement interface: enables execution of "raw string" queries (does not protect against SQL injection)
+        - PreparedStatement interface: enables execution of predefined query templates where data can be passed in as parameters that correspond with template placeholders (protects against SQL injection)
+        - ResultSet interface: represents the data that is retrieved after executing a query. Can be iterated over and data extracted, row by row
+        - SQLException class: the single (checked) exception that could occur from the JDBC API
+    - How to utilize JDBC
+        1. Register driver with the DriverManager class
+        2. Use DriverManager.getConnection(String url, String username, String password) to obtain Connection object
+        3. Use Connection object to obtain Statement OR PreparedStatement interface
+        4. Execute query to retrieve ResultSet (if using SELECT statement) using `.executeQuery()` OR executeUpdate() if inserting, deleting, or modifying data (which will return an int representing number of records updated instead)
+        5. If using ResultSet, iterate over ResultSet to retrieve data
+* Javalin
+    - Simple, lightweight framework for building Web APIs
+    - Makes use of functional interfaces to enable usage of lambdas
+    - Endpoints can be mapped via `app.get(String path, Handler lambda)` or `.post`, `.put`, `.patch`, `.delete`, etc.
+    - Handler is a functional interface that defines the single `.handle(Context ctx)` abstract method
+        - Can be used to define lambdas in the form `(ctx) -> {}`
+        - These lambdas serve as the code that will be executed when an HTTP request is received to the mapped endpoint
+        - The `Context` parameter provides the ability to extract information from the HTTP request and include information into the HTTP response
         
