@@ -8,10 +8,10 @@ public class Driver {
         PetFactory pf = new PetFactory();
 
         Pet myPet = pf.createPet("dog", "Fido");
-        myPet.play(); // Bob is playing fetch!
+        myPet.play(); // Fido is playing fetch!
 
         myPet = pf.createPet("cat", "Whiskers");
-        myPet.play(); // Bob is playing with yarn!
+        myPet.play(); // Whiskers is playing with yarn!
     }
 
 }
