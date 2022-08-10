@@ -33,6 +33,15 @@ sudo yum install -y apache-maven
 mvn -version
 ```
 
+# Install Google Chrome
+```bash
+sudo curl https://intoli.com/install-google-chrome.sh | bash
+
+sudo mv /usr/bin/google-chrome-stable /usr/bin/google-chrome
+
+google-chrome --version && which google-chrome
+```
+
 # Install Jenkins
 ```bash
 sudo wget -O /etc/yum.repos.d/jenkins.repo \
