@@ -42,8 +42,8 @@ Project 2 is a group-based, full-stack application that you will be designing an
     - Utilize AWS
     - Deploy application to AWS EC2 instance
     - Utilize AWS RDS for Postgres database hosting
-- DevOps pipeline
-    - Setup Jenkins pipeline for automated building and deployment of backend + frontend
+- DevOps E2E testing pipeline
+    - Setup Jenkins pipeline for automated execution of E2E tests
 
 # GitHub suggestion
 - Create a separate repository for the backend
