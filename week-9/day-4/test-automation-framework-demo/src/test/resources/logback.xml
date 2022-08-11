@@ -1,0 +1,35 @@
+<configuration>
+    <appender name="my_console_appender" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                [%d{MMM dd yyyy - HH:mm:ss}] [%t] %-5level %logger{36} - %msg%n
+            </Pattern>
+        </layout>
+    </appender>
+
+    <appender name="my_file_appender" class="ch.qos.logback.core.FileAppender">
+        <file>log.txt</file>
+        <append>true</append>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                [%d{MMM dd yyyy - HH:mm:ss}] [%t] %-5level %logger{36} - %msg%n
+            </Pattern>
+        </layout>
+    </appender>
+
+    <appender name="my_db_appender" class="ch.qos.logback.classic.db.DBAppender">
+        <connectionSource class="ch.qos.logback.core.db.DriverManagerConnectionSource">
+            <driverClass>org.postgresql.Driver</driverClass>
+            <url>${logger_db_url}</url>
+            <user>${logger_db_username}</user>
+            <password>${logger_db_password}</password>
+        </connectionSource>
+    </appender>
+
+    <root level="info"> <!-- We want to only log messages that are INFO or more important (INFO, WARN, ERROR), we ignore TRACE and DEBUG-->
+        <appender-ref ref="my_console_appender" />
+        <appender-ref ref="my_file_appender" />
+        <appender-ref ref="my_db_appender" />
+    </root>
+
+</configuration>
