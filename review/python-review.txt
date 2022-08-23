@@ -1,0 +1,185 @@
+datatypes:
+numeric types
+- int
+	-> 12
+- float
+	-> 23.34
+- complex (imaginary numbers)
+
+complex types
+- str (string)
+	"hello123"
+	"@!@#DFSDKJQere"
+	 string methods
+	- capitalize()
+	- upper()
+	- lower()
+	- count(value)
+	- find(value)
+	- index(value)
+	- etc...
+- list (collection)
+	-> Ordered collection of items
+	-> Indexed from 0 to number of elements - 1
+	-> Mutable (add and remove items from list)
+	- list methods
+		-> append(item)
+		-> count
+		-> extend(another_list)
+		-> insert(index, item)
+		-> index(item): give you the index of the first occurrence of a given item
+		-> pop() / pop(index)
+		-> remove(item)
+		-> sort()
+		-> reverse()
+- tuple (collection)
+	-> Ordered collection of items
+	-> Indexed from 0 to number of elements - 1
+	-> Immutable (once you create a tuple, you cannot add or remove items)
+	Tuple methods
+	- count(item)
+	- index(item)
+- set (collection)
+	-> Unordered collection of items
+	-> Items must be unique
+	-> Mutable (add and remove items from a set)
+	Set methods
+	- add(item)
+	- clear()
+	- difference(set)
+- dict (collection) aka Maps in Java
+	-> Unordered collection of key-value pairs
+	-> Keys must be unique, but values do not need to be unique
+	-> Mutable (add and remove key value pairs from a dictionary)
+	Dictionary methods
+	- clear()
+	- get(key)
+	- items()
+	- keys()
+	- values()
+	- pop(key): remove the key-value pair
+	- popitem(): remove the last key-value pair inserted
+	Keys can be any immutable datatype
+NoneType
+- None
+-> Signifies the absence of a value (similar to null in Java)
+
+Custom Types
+- Classes (blueprints)
+
+
+
+
+======================
+Java has primitives and objects
+
+On the other hand, everything in Python is an object
+
+int, float, str (immutable objects)
+tuple (immutable object) <- collection
+
+
+
+======================
+is operator
+-> Compare two variables to see if they are referring to the same object
+
+in operator
+-> Check if value is inside collection
+4 in a -> boolean
+-> Can be used for lists, tuples, sets, and dictionaries(keys)
+
+
+Slicing
+-> Used with strings, lists, and tuples (anything that is indexed)
+-> [start:end:step]
+-> Does NOT include the end
+-> You can do a lot of implicit things
+[::-1]
+[:5]
+[:5:3]
+[1::2]
+[1:5] (implictly a step of 1)
+
+======================
+Useful functions
+
+len()
+-> Used to see number of characters in a string
+-> Number of elements in a set, list, tuple
+-> number of key-value pairs in a dictionary
+
+=======================
+range(start, end, step)
+-> An iterable containing numbers from start to end (skipping by a step)
+range(10) -> 0 to 9
+range(2, 5) -> 2, 3, 4
+range(0, 10, 2) -> 0, 2, 4, 6, 8
+
+======================
+Iterable
+You can iterate over these with a for loop
+-> range
+-> list
+-> tuple
+-> set
+-> dict
+-> str
+
+====================
+Loops
+
+for loops
+
+for value in <iterable>:
+	# code here
+
+while loops
+
+while <condition>:
+	# Code here
+
+
+enumerate(iterable) function
+
+for count, element in enumerate(<iterable>):
+	# code here
+
+Keywords
+Work with while loops AND for loops
+- break: terminate the loop entirely
+- continue: Skip to the next iteration and ignore any line of code below the continue keyword
+
+
+=====================
+Functions / methods
+-> function v. method
+- Methods are functions inside classes
+
+Functions are blocks of code that are reusable
+In order for code inside a function to be executed, the function must be invoked/called
+Functions can return values based on some computation that was performed
+Functions can take arguments through parameters defined within the function
+If you don't explicitly return anything, a function will return None
+
+def my_func(a, b):
+	print('performing add operation')
+	return a + b
+
+======================
+
+Python does NOT have block scope
+
+Variable scopes in Python
+-> Global 
+-> Function/Method (local)
+
+keywords
+-> global keyword: allows for a method/function to utilize a global variable
+def my_func():
+	global a
+	a = 1000 # modify the global variable a instead of function/method scope a
+
+-> nonlocal keyword: when you have a nested function inside another function
+
+
